@@ -1,8 +1,7 @@
-## Welcome to GitHub Pages
+## 欢迎路过
 
-You can use the [editor on GitHub](https://github.com/PhilSongZi/PhilSongZi.github.io/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
+来都来了，不去[我的主页](https://github.com/PhilSongZi)看看嘛。
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
 ### Markdown
 
