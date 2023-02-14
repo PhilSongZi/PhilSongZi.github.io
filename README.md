@@ -1,4 +1,4 @@
-# 欢迎路过
+# PhilSongZiのblog
 来都来了，不去[我的主页](https://github.com/PhilSongZi)看看嘛。
 
 ## 个人练习项目
