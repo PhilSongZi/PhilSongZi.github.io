@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>MYDB记录</title>
+    <url>/post/7e29e8fb.html</url>
+    <content><![CDATA[<h2 id="1-clone-本地运行">1. clone&amp;本地运行</h2>
+<h3 id="1-1-环境">1.1. 环境</h3>
+<ul>
+<li>jdk：17.07</li>
+<li>maven：3.9.2</li>
+<li>os：windows 11</li>
+</ul>
+<h3 id="1-2-运行前设置">1.2. 运行前设置</h3>
+<ul>
+<li>none</li>
+</ul>
+<h3 id="1-3-问题">1.3. 问题</h3>
+<ul>
+<li>none</li>
+</ul>
+<h2 id="2-文档先行：整体架构">2. 文档先行：整体架构</h2>
+<h3 id="整体架构">整体架构</h3>
+<h4 id="前端（客户端）">前端（客户端）</h4>
+<p>读取用户输入，发送到后端执行，输出返回结果。等待下一次输入。</p>
+<h4 id="SQL解析器（后面补充）">SQL解析器（后面补充）</h4>
+<p>解析SQL，包装成对应的对象。</p>
+<h4 id="后端">后端</h4>
+<p>解析SQL，若合法，尝试执行并返回结果。</p>
+<p>模块划分：各个模块通过接口向其依赖的模块提供方法</p>
+<ol>
+<li>Transaction Manager（TM）</li>
+<li>Data Manager（DM）</li>
+<li>Version Manager（VM）</li>
+<li>Index Manager（IM）</li>
+<li>Table Manager（TBM）</li>
+</ol>
+<p>五个模块的依赖图如下，拓补排序得出实现顺序为：TM -&gt; DM -&gt; VM -&gt; IM -&gt; TBM</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2023/png/35904594/1692178246671-63ef0550-24a3-4244-bee2-0f6676035fd0.png" alt="img"></p>
+<p>各个模块的职责：</p>
+<ol>
+<li>TM 通过维护 XID 文件来维护事务的状态，并提供接口供其他模块来查询某个事务的状态。</li>
+<li>DM 直接管理数据库 DB 文件和日志文件。DM 的主要职责有：1) 分页管理 DB 文件，并进行缓存；2) 管理日志文件，保证在发生错误时可以根据日志进行恢复；3) 抽象 DB 文件为 DataItem 供上层模块使用，并提供缓存。</li>
+<li>VM 基于两段锁协议实现了调度序列的可串行化，并实现了 MVCC 以消除读写阻塞。同时实现了两种隔离级别。</li>
+<li>IM 实现了基于 B+ 树的索引，目前 where 只支持已索引字段。</li>
+<li>TBM 实现了对字段和表的管理。同时，解析 SQL 语句，并根据语句操作表。</li>
+</ol>
+<h2 id="3-Transaction-Manager（TM）">3. Transaction Manager（TM）</h2>
+<p>TM 通过维护 XID 文件来维护事务的状态，并提供接口供其他模块来查询某个事务的状态。</p>
+<h3 id="XID-文件">XID  文件</h3>
+<p>XID 文件规则：</p>
+<p>每个事物都有一个 xid，这个 ID 是一个事务的<strong>唯一标识</strong>。事务的 xid 从 <strong>1</strong> 开始编号，自增，不可重复。规定 xid 为 0 的事务是超级事务（super transaction），想在没有申请事务的情况下进行一些操作时，可将操作的 xid 设置为 0，超级事务的状态一直是 committed。</p>
+<p>MYDB 中事务的状态：</p>
+<ol>
+<li>active，进行中</li>
+<li>committed，已提交</li>
+<li>aborted，已撤销（回滚）</li>
+</ol>
+<p>XID 文件内容的结构：</p>
+<ol>
+<li>给每个事务分配<strong>一个字节</strong>的空间来保存其<strong>状态</strong>。</li>
+<li>XID 文件头部保存一个 <strong>8 字节数字</strong>，记录此 XID 文件管理<strong>事务的个数</strong>。</li>
+<li>事务 xid 在文件中的状态存储位置在 <strong>(xid-1)+8 字节处</strong>。（xid-1 是因为 xid 为 0 的状态不需要记录。）</li>
+</ol>
+<h3 id="TransactionManager">TransactionManager</h3>
+<p>提供的接口：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">TransactionManager</span> &#123;</span><br><span class="line">    <span class="type">long</span> <span class="title function_">begin</span><span class="params">()</span>;                       <span class="comment">// 开启一个新事务</span></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">commit</span><span class="params">(<span class="type">long</span> xid)</span>;              <span class="comment">// 提交一个事务</span></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">abort</span><span class="params">(<span class="type">long</span> xid)</span>;               <span class="comment">// 取消一个事务</span></span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">isActive</span><span class="params">(<span class="type">long</span> xid)</span>;         <span class="comment">// 查询一个事务的状态是否是正在进行的状态</span></span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">isCommitted</span><span class="params">(<span class="type">long</span> xid)</span>;      <span class="comment">// 查询一个事务的状态是否是已提交</span></span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">isAborted</span><span class="params">(<span class="type">long</span> xid)</span>;        <span class="comment">// 查询一个事务的状态是否是已取消</span></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">close</span><span class="params">()</span>;                       <span class="comment">// 关闭TM</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>根据定义的 XID 文件结构，得到需要定义的一些常量：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// XID文件头长度</span></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="type">int</span> <span class="variable">LEN_XID_HEADER_LENGTH</span> <span class="operator">=</span> <span class="number">8</span>;</span><br><span class="line"><span class="comment">// 每个事务的占用长度</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">int</span> <span class="variable">XID_FIELD_SIZE</span> <span class="operator">=</span> <span class="number">1</span>;</span><br><span class="line"><span class="comment">// 事务的三种状态</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">byte</span> <span class="variable">FIELD_TRAN_ACTIVE</span>   <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">byte</span> <span class="variable">FIELD_TRAN_COMMITTED</span> <span class="operator">=</span> <span class="number">1</span>;</span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">byte</span> <span class="variable">FIELD_TRAN_ABORTED</span>  <span class="operator">=</span> <span class="number">2</span>;</span><br><span class="line"><span class="comment">// 超级事务，永远为commited状态</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">long</span> <span class="variable">SUPER_XID</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line"><span class="comment">// XID 文件后缀</span></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="type">String</span> <span class="variable">XID_SUFFIX</span> <span class="operator">=</span> <span class="string">&quot;.xid&quot;</span>;</span><br></pre></td></tr></table></figure>
+<p>在构造函数创建了一个 TransactionManager 之后，首先要对 XID 文件进行校验，以保证这是一个合法的 XID 文件。校验的方式是通过文件头的 8 字节数字反推文件的理论长度，与文件的实际长度做对比。如果不同则认为 XID 文件不合法。当校验不通过时，调用自定义方法强制停机。</p>
+<p><code>begin()</code>方法：开启一个事务——</p>
+<ul>
+<li>首先设置 xidCounter+1 事务的状态为 committed，</li>
+<li>然后 xidCounter 自增</li>
+<li>同时，事务数量增加了一个，别忘记更新文件头。</li>
+</ul>
+<p><strong>注意点</strong>：所有文件操作在执行后都需要立刻刷入文件中，防止崩溃后文件丢失数据。</p>
+<p>从查询事务状态的方法中抽象出一种公共的方法，使得实现事务状态查询时只需根据条件调用此方法：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 检测XID事务是否处于status状态</span></span><br><span class="line"><span class="keyword">private</span> <span class="type">boolean</span> <span class="title function_">checkXID</span><span class="params">(<span class="type">long</span> xid, <span class="type">byte</span> status)</span> &#123;</span><br><span class="line">    <span class="type">long</span> <span class="variable">offset</span> <span class="operator">=</span> getXidPosition(xid);</span><br><span class="line">    <span class="type">ByteBuffer</span> <span class="variable">buf</span> <span class="operator">=</span> ByteBuffer.wrap(<span class="keyword">new</span> <span class="title class_">byte</span>[XID_FIELD_SIZE]);</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        fc.position(offset);</span><br><span class="line">        fc.read(buf);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">        Panic.panic(e);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> buf.array()[<span class="number">0</span>] == status;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在接口 TransactionManager 中，使用<strong>单例模式</strong> 创建 TM，其有两种方式，分别是：先新建 XID 文件再创建 TM实例（create 方法），或者从一个已有的 XID 文件中创建 TM 实例（open 方法）。要注意的是，从零创建 XID 文件时需要写一个<strong>空的 XID 文件头</strong>，即设置 xidCounter 为 0，否则后续在校验时会不合法</p>
+<h2 id="4-Data-Manager（DM）">4. Data Manager（DM）</h2>
+<p>DataManager（DM）功能归纳：</p>
+<ul>
+<li>上层模块和文件系统中的一个抽象层。向上，提供数据包装；向下，直接读写文件。</li>
+<li>提供日志功能。</li>
+</ul>
+<h3 id="1、引用计数缓存框架">1、引用计数缓存框架</h3>
+<p>分页管理和数据项（DataItem）管理涉及缓存，故抽象出一个通用缓存框架。</p>
+<h4 id="引用计数法">引用计数法</h4>
+<p>引用计数法（Reference counting）是一种内存管理技术，它通过计算每个对象被引用的次数来判断是否需要回收该对象。当对象被创建时，引用计数为1，每当有一个新的引用指向该对象时，计数加1，当引用失效时，计数减1。当计数为0时，该对象就可以被回收。</p>
+<p>在MYDB的实践中，需要的效果是，只有上层模块主动释放引用，缓存在确保没有模块在使用这个资源了，才会去驱逐资源。</p>
+<p>于是，选择引用计数法。增加了一个方法 release(key)，用于在上册模块不使用某个资源时，释放对资源的引用。当引用归零时，缓存就会驱逐这个资源。</p>
+<p>同样，在缓存满了之后，引用计数法无法自动释放缓存，此时应该直接报错（和 JVM 似的，直接 OOM）。</p>
+<h4 id="LRU">LRU</h4>
+<p>LRU（least recently used）是一种缓存淘汰算法。它的特点是根据数据最近被访问的时间来决定哪些数据应该被保留，哪些数据应该被淘汰。当缓存达到一定容量时，会淘汰掉最近最少使用的数据。</p>
+<p>如果使用 LRU 缓存，那么只需要设计一个 get(key) 接口即可，释放缓存可以在缓存满了之后自动完成。</p>
+<p>however，当某时刻缓存满了，缓存驱逐一个资源，此时上层模块想将某个资源强制刷回3数据源，这个资源恰恰是刚被驱逐的资源。此时的上层模块会发现，资源在缓存中消失了，那么，是否有必要做回源操作？</p>
+<ul>
+<li>不回源。由于没法确定缓存被驱逐的时间，更没法确定被驱逐之后数据项是否被修改，这样是极其不安全的</li>
+<li>回源。如果数据项被驱逐时的数据和现在又是相同的，那就是一次无效回源</li>
+<li>放回缓存里，等下次被驱逐时回源。看起来解决了问题，但是此时缓存已经满了，这意味着你还需要驱逐一个资源才能放进去。这有可能会导致缓存抖动问题。</li>
+</ul>
+<h4 id="实现">实现</h4>
+<p><code>AbstractCache</code>类作为抽象缓存类，定义两个方法交由子类实现。</p>
+<p>实现引用计数，需要维护一个资源引用个数的HashMap，为了多线程访问，需要维护一个记录资源访问情况的HashMap。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 当资源不在缓存时的获取行为</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">protected</span> <span class="keyword">abstract</span> T <span class="title function_">getForCache</span><span class="params">(<span class="type">long</span> key)</span> <span class="keyword">throws</span> Exception;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 当资源被驱逐时的写回行为</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">protected</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title function_">releaseForCache</span><span class="params">(T obj)</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> HashMap&lt;Long, T&gt; cache;                     <span class="comment">// 实际缓存的数据</span></span><br><span class="line"><span class="keyword">private</span> HashMap&lt;Long, Integer&gt; references;          <span class="comment">// 资源的引用个数</span></span><br><span class="line"><span class="keyword">private</span> HashMap&lt;Long, Boolean&gt; getting;             <span class="comment">// 正在被获取的资源</span></span><br></pre></td></tr></table></figure>
+<p>获取资源的<code>get()</code>方法：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">protected</span> T <span class="title function_">get</span><span class="params">(<span class="type">long</span> key)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        <span class="comment">// 1.在通过 get() 方法获取资源时，首先进入一个死循环，来无限尝试从缓存里获取。</span></span><br><span class="line">        <span class="keyword">while</span>(<span class="literal">true</span>) &#123;</span><br><span class="line">            lock.lock();</span><br><span class="line">            <span class="comment">// 1.1.首先就需要检查这个时候是否有其他线程正在从数据源获取这个资源，如果有，就过会再来看看</span></span><br><span class="line">            <span class="keyword">if</span>(getting.containsKey(key)) &#123;</span><br><span class="line">                <span class="comment">// 请求的资源正在被其他线程获取</span></span><br><span class="line">                lock.unlock();</span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    Thread.sleep(<span class="number">1</span>);</span><br><span class="line">                &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">                    e.printStackTrace();</span><br><span class="line">                    <span class="keyword">continue</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 1.2.如果没有其他线程在获取这个资源，那么就可以尝试从缓存中获取了</span></span><br><span class="line">            <span class="keyword">if</span>(cache.containsKey(key)) &#123;</span><br><span class="line">                <span class="comment">// 资源在缓存中，直接返回</span></span><br><span class="line">                <span class="type">T</span> <span class="variable">obj</span> <span class="operator">=</span> cache.get(key);</span><br><span class="line">                <span class="comment">// 记得给资源的引用计数加一</span></span><br><span class="line">                references.put(key, references.get(key) + <span class="number">1</span>);</span><br><span class="line">                lock.unlock();</span><br><span class="line">                <span class="keyword">return</span> obj;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 1.3.尝试获取该资源</span></span><br><span class="line">            <span class="comment">// a.判断缓存是否已满，如果已满，就抛出一个异常</span></span><br><span class="line">            <span class="keyword">if</span>(maxResource &gt; <span class="number">0</span> &amp;&amp; count == maxResource) &#123;</span><br><span class="line">                lock.unlock();</span><br><span class="line">                <span class="keyword">throw</span> Error.CacheFullException;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// b.如果缓存未满，就在 getting 中注册一下，该线程准备从数据源获取资源了</span></span><br><span class="line">            count ++;</span><br><span class="line">            getting.put(key, <span class="literal">true</span>);</span><br><span class="line">            lock.unlock();</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 2.从数据源获取资源</span></span><br><span class="line">        <span class="type">T</span> <span class="variable">obj</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            obj = getForCache(key);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            <span class="comment">// 如果获取失败，就把 getting 中的注册信息清除掉</span></span><br><span class="line">            lock.lock();</span><br><span class="line">            count --;</span><br><span class="line">            getting.remove(key);</span><br><span class="line">            lock.unlock();</span><br><span class="line">            <span class="keyword">throw</span> e;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        lock.lock();</span><br><span class="line">        getting.remove(key);       <span class="comment">// 获取完成要从 getting 中清除注册信息</span></span><br><span class="line">        cache.put(key, obj);</span><br><span class="line">        references.put(key, <span class="number">1</span>);</span><br><span class="line">        lock.unlock();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> obj;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>释放资源的<code>release</code>方法：当引用计数references 逐渐 -1 减到 0 后，就可以回源并删除缓存中相关的结构。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 3.释放资源</span></span><br><span class="line"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">release</span><span class="params">(<span class="type">long</span> key)</span> &#123;</span><br><span class="line">        lock.lock();</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="comment">// 释放一个缓存时，直接从 references 中减 1，如果已经减到 0 了，就可以回源，并且删除缓存中所有相关的结构</span></span><br><span class="line">            <span class="type">int</span> <span class="variable">ref</span> <span class="operator">=</span> references.get(key) - <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span>(ref == <span class="number">0</span>) &#123;</span><br><span class="line">                <span class="type">T</span> <span class="variable">obj</span> <span class="operator">=</span> cache.get(key);</span><br><span class="line">                <span class="comment">// 调用抽象方法释放缓存</span></span><br><span class="line">                releaseForCache(obj);</span><br><span class="line">                <span class="comment">// 删除缓存中所有相关的结构</span></span><br><span class="line">                references.remove(key);</span><br><span class="line">                cache.remove(key);</span><br><span class="line">                count --;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                references.put(key, ref);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">            lock.unlock();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="2、共享内存数组">2、共享内存数组</h3>
+<p>在Java中，<strong>数组</strong>被视为一个<strong>对象</strong>，其在内存中也是以对象的形式存储的。在 Java 中，当执行类似 subArray 的操作时，只会在底层进行一个复制，<strong>无法同一片内存</strong>。所以，要实现共享内存数组，定义一个<code>SubArray</code>类，规定这个数组的可使用范围：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">SubArray</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">byte</span>[] raw;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> start;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> end;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">SubArray</span><span class="params">(<span class="type">byte</span>[] raw, <span class="type">int</span> start, <span class="type">int</span> end)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.raw = raw;</span><br><span class="line">        <span class="built_in">this</span>.start = start;</span><br><span class="line">        <span class="built_in">this</span>.end = end;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="5-Version-Manager（VM）">5. Version Manager（VM）</h2>
+<h2 id="6-Index-Manager-（IM）">6. Index Manager （IM）</h2>
+<h2 id="7-Table-Manager（TBM）">7. Table Manager（TBM）</h2>
+<h2 id="8-SQL词法解析器">8. SQL词法解析器</h2>
+<h2 id="9-Server-和-Client">9. Server 和 Client</h2>
+<h2 id="10-总结（从实现功能出发，由点到面逐渐总结对应的MySQL）">10. 总结（从实现功能出发，由点到面逐渐总结对应的MySQL）</h2>
+<h3 id="实现的功能">实现的功能</h3>
+<h4 id="数据的可靠性和数据恢复">数据的可靠性和数据恢复</h4>
+<h4 id="两段锁协议（2PL）实现可串行化调度">两段锁协议（2PL）实现可串行化调度</h4>
+<h4 id="MVCC">MVCC</h4>
+<h4 id="两种事务隔离级别（读提交和可重复读）">两种事务隔离级别（读提交和可重复读）</h4>
+<h4 id="死锁处理">死锁处理</h4>
+<h4 id="简单的表和字段管理">简单的表和字段管理</h4>
+<h4 id="简单的-SQL-解析">简单的 SQL 解析</h4>
+<h4 id="基于-socket-的-server-和-client">基于 socket 的 server 和 client</h4>
+]]></content>
+      <categories>
+        <category>Coding</category>
+      </categories>
+      <tags>
+        <tag>MYDB</tag>
+        <tag>轮子</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Wetab</title>
+    <url>/post/32e2265d.html</url>
+    <content><![CDATA[<blockquote>
+<p>Wetab笔记，给你更好的笔记体验</p>
+<p>这里是<a href="https://www.wetab.link">Wetab新标签官网</a> (右键点击打开链接)</p>
+</blockquote>
+<p>以下特性可以为你的笔记带来非常棒的体验：</p>
+<ul>
+<li>
+<p>[x] 📝 <strong>所见即所得的 Markdown</strong> - 以一种优雅的方式编写 markdown</p>
+</li>
+<li>
+<p>[x] 👍 <strong>Emoji</strong> - 支持 emoji 快捷指令和选择器</p>
+</li>
+<li>
+<p>[x] 💾 <strong>剪贴板</strong> - 支持 markdown 格式的复制粘贴</p>
+</li>
+<li>
+<p>[x] ⌨️ <strong>换行模式</strong> - 你可以使用“Enter”和“Shift + Enter”两种方式进行换行</p>
+</li>
+<li>
+<p>[x] ⚡ <strong>斜线指令</strong> - 在空白处输入状态下通过“/”可以完成丰富的输入指令</p>
+</li>
+<li>
+<p>[x] 🧮 <strong>数学支持</strong> - 你可以完成数学公式的描写</p>
+</li>
+<li>
+<p>[x] 📊 <strong>表格支持</strong> - 拥有流畅的 ui 的表格支持</p>
+</li>
+<li>
+<p>[x] 📰 <strong>图表支持</strong> - 基于<a href="https://mermaid-js.github.io/mermaid/#/">mermaid</a>的图表支持</p>
+</li>
+</ul>
+<hr>
+<p>你可以添加行内代码例如 <code>inline code</code> 和代码块：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">main</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">info</span>(<span class="string">&quot;Hello world!&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Tips: 使用<code>Mod-Enter</code>来退出块级元素，例如代码块。</p>
+</blockquote>
+<hr>
+<p>你可以输入<code>||</code>和一个空格来创建表格：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">表头 1</th>
+<th style="text-align:center">表头 2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">内容 1</td>
+<td style="text-align:center"><s>内容 1</s></td>
+</tr>
+<tr>
+<td style="text-align:left">内容 2</td>
+<td style="text-align:center"><strong>内容</strong> 2</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p>数学公式通过 <a href="https://en.wikipedia.org/wiki/TeX">TeX 表达式</a>支持。</p>
+<p>这里我们有行内公式： $E = mc^2$，你可以点击并编辑它。</p>
+<p>数学公式块也是支持的。</p>
+<p>$$<br>
+\begin{aligned}<br>
+T( (v_1 + v_2) \otimes w) &amp;= T(v_1 \otimes w) + T(v_2 \otimes w) \<br>
+T( v \otimes (w_1 + w_2)) &amp;= T(v \otimes w_1) + T(v \otimes w_2) \<br>
+T( (\alpha v) \otimes w ) &amp;= T( \alpha ( v \otimes w) ) \<br>
+T( v \otimes (\alpha w) ) &amp;= T( \alpha ( v \otimes w) ) \<br>
+\end{aligned}<br>
+$$</p>
+<p>你可以输入<code>$$</code>和一个空格来创建数学公式块。</p>
+<hr>
+<p>使用 <a href="https://www.webfx.com/tools/emoji-cheat-sheet/">emoji 快捷指令</a> 例如 <code>:+1:</code> 来添加 emoji.</p>
+<p>在输入时，你也许注意到了 emoji 过滤器，尝试输入<code>:baby</code>来查看它。</p>
+<hr>
+<p>你可以输入 <code>```mermaid</code> 来添加图表。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">graph TD;</span><br><span class="line">    EditorState--&gt;EditorView;</span><br><span class="line">    EditorView--&gt;DOMEvent;</span><br><span class="line">    DOMEvent--&gt;Transaction;</span><br><span class="line">    Transaction--&gt;EditorState;</span><br></pre></td></tr></table></figure>
+<hr>
+<p>Wetab笔记基于 <a href="https://milkdown.dev/">Milkdown</a> 完成</p>
+]]></content>
+      <tags>
+        <tag>Markdown</tag>
+      </tags>
+  </entry>
+</search>
