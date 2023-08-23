@@ -1,6 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Wetab</title>
+    <url>/post/32e2265d.html</url>
+    <content><![CDATA[<blockquote>
+<p>Wetab笔记，给你更好的笔记体验</p>
+<p>这里是<a href="https://www.wetab.link">Wetab新标签官网</a> (右键点击打开链接)</p>
+</blockquote>
+<p>以下特性可以为你的笔记带来非常棒的体验：</p>
+<ul>
+<li>
+<p>[x] 📝 <strong>所见即所得的 Markdown</strong> - 以一种优雅的方式编写 markdown</p>
+</li>
+<li>
+<p>[x] 👍 <strong>Emoji</strong> - 支持 emoji 快捷指令和选择器</p>
+</li>
+<li>
+<p>[x] 💾 <strong>剪贴板</strong> - 支持 markdown 格式的复制粘贴</p>
+</li>
+<li>
+<p>[x] ⌨️ <strong>换行模式</strong> - 你可以使用“Enter”和“Shift + Enter”两种方式进行换行</p>
+</li>
+<li>
+<p>[x] ⚡ <strong>斜线指令</strong> - 在空白处输入状态下通过“/”可以完成丰富的输入指令</p>
+</li>
+<li>
+<p>[x] 🧮 <strong>数学支持</strong> - 你可以完成数学公式的描写</p>
+</li>
+<li>
+<p>[x] 📊 <strong>表格支持</strong> - 拥有流畅的 ui 的表格支持</p>
+</li>
+<li>
+<p>[x] 📰 <strong>图表支持</strong> - 基于<a href="https://mermaid-js.github.io/mermaid/#/">mermaid</a>的图表支持</p>
+</li>
+</ul>
+<hr>
+<p>你可以添加行内代码例如 <code>inline code</code> 和代码块：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">main</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">info</span>(<span class="string">&quot;Hello world!&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Tips: 使用<code>Mod-Enter</code>来退出块级元素，例如代码块。</p>
+</blockquote>
+<hr>
+<p>你可以输入<code>||</code>和一个空格来创建表格：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">表头 1</th>
+<th style="text-align:center">表头 2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">内容 1</td>
+<td style="text-align:center"><s>内容 1</s></td>
+</tr>
+<tr>
+<td style="text-align:left">内容 2</td>
+<td style="text-align:center"><strong>内容</strong> 2</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p>数学公式通过 <a href="https://en.wikipedia.org/wiki/TeX">TeX 表达式</a>支持。</p>
+<p>这里我们有行内公式： $E = mc^2$，你可以点击并编辑它。</p>
+<p>数学公式块也是支持的。</p>
+<p>$$<br>
+\begin{aligned}<br>
+T( (v_1 + v_2) \otimes w) &amp;= T(v_1 \otimes w) + T(v_2 \otimes w) \<br>
+T( v \otimes (w_1 + w_2)) &amp;= T(v \otimes w_1) + T(v \otimes w_2) \<br>
+T( (\alpha v) \otimes w ) &amp;= T( \alpha ( v \otimes w) ) \<br>
+T( v \otimes (\alpha w) ) &amp;= T( \alpha ( v \otimes w) ) \<br>
+\end{aligned}<br>
+$$</p>
+<p>你可以输入<code>$$</code>和一个空格来创建数学公式块。</p>
+<hr>
+<p>使用 <a href="https://www.webfx.com/tools/emoji-cheat-sheet/">emoji 快捷指令</a> 例如 <code>:+1:</code> 来添加 emoji.</p>
+<p>在输入时，你也许注意到了 emoji 过滤器，尝试输入<code>:baby</code>来查看它。</p>
+<hr>
+<p>你可以输入 <code>```mermaid</code> 来添加图表。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">graph TD;</span><br><span class="line">    EditorState--&gt;EditorView;</span><br><span class="line">    EditorView--&gt;DOMEvent;</span><br><span class="line">    DOMEvent--&gt;Transaction;</span><br><span class="line">    Transaction--&gt;EditorState;</span><br></pre></td></tr></table></figure>
+<hr>
+<p>Wetab笔记基于 <a href="https://milkdown.dev/">Milkdown</a> 完成</p>
+]]></content>
+      <tags>
+        <tag>Markdown</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>MYDB记录</title>
     <url>/post/7e29e8fb.html</url>
     <content><![CDATA[<h2 id="1-clone-本地运行">1. clone&amp;本地运行</h2>
@@ -135,89 +221,32 @@
       </tags>
   </entry>
   <entry>
-    <title>Wetab</title>
-    <url>/post/32e2265d.html</url>
-    <content><![CDATA[<blockquote>
-<p>Wetab笔记，给你更好的笔记体验</p>
-<p>这里是<a href="https://www.wetab.link">Wetab新标签官网</a> (右键点击打开链接)</p>
-</blockquote>
-<p>以下特性可以为你的笔记带来非常棒的体验：</p>
-<ul>
-<li>
-<p>[x] 📝 <strong>所见即所得的 Markdown</strong> - 以一种优雅的方式编写 markdown</p>
-</li>
-<li>
-<p>[x] 👍 <strong>Emoji</strong> - 支持 emoji 快捷指令和选择器</p>
-</li>
-<li>
-<p>[x] 💾 <strong>剪贴板</strong> - 支持 markdown 格式的复制粘贴</p>
-</li>
-<li>
-<p>[x] ⌨️ <strong>换行模式</strong> - 你可以使用“Enter”和“Shift + Enter”两种方式进行换行</p>
-</li>
-<li>
-<p>[x] ⚡ <strong>斜线指令</strong> - 在空白处输入状态下通过“/”可以完成丰富的输入指令</p>
-</li>
-<li>
-<p>[x] 🧮 <strong>数学支持</strong> - 你可以完成数学公式的描写</p>
-</li>
-<li>
-<p>[x] 📊 <strong>表格支持</strong> - 拥有流畅的 ui 的表格支持</p>
-</li>
-<li>
-<p>[x] 📰 <strong>图表支持</strong> - 基于<a href="https://mermaid-js.github.io/mermaid/#/">mermaid</a>的图表支持</p>
-</li>
-</ul>
-<hr>
-<p>你可以添加行内代码例如 <code>inline code</code> 和代码块：</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">main</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">info</span>(<span class="string">&quot;Hello world!&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>Tips: 使用<code>Mod-Enter</code>来退出块级元素，例如代码块。</p>
-</blockquote>
-<hr>
-<p>你可以输入<code>||</code>和一个空格来创建表格：</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">表头 1</th>
-<th style="text-align:center">表头 2</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">内容 1</td>
-<td style="text-align:center"><s>内容 1</s></td>
-</tr>
-<tr>
-<td style="text-align:left">内容 2</td>
-<td style="text-align:center"><strong>内容</strong> 2</td>
-</tr>
-</tbody>
-</table>
-<hr>
-<p>数学公式通过 <a href="https://en.wikipedia.org/wiki/TeX">TeX 表达式</a>支持。</p>
-<p>这里我们有行内公式： $E = mc^2$，你可以点击并编辑它。</p>
-<p>数学公式块也是支持的。</p>
-<p>$$<br>
-\begin{aligned}<br>
-T( (v_1 + v_2) \otimes w) &amp;= T(v_1 \otimes w) + T(v_2 \otimes w) \<br>
-T( v \otimes (w_1 + w_2)) &amp;= T(v \otimes w_1) + T(v \otimes w_2) \<br>
-T( (\alpha v) \otimes w ) &amp;= T( \alpha ( v \otimes w) ) \<br>
-T( v \otimes (\alpha w) ) &amp;= T( \alpha ( v \otimes w) ) \<br>
-\end{aligned}<br>
-$$</p>
-<p>你可以输入<code>$$</code>和一个空格来创建数学公式块。</p>
-<hr>
-<p>使用 <a href="https://www.webfx.com/tools/emoji-cheat-sheet/">emoji 快捷指令</a> 例如 <code>:+1:</code> 来添加 emoji.</p>
-<p>在输入时，你也许注意到了 emoji 过滤器，尝试输入<code>:baby</code>来查看它。</p>
-<hr>
-<p>你可以输入 <code>```mermaid</code> 来添加图表。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">graph TD;</span><br><span class="line">    EditorState--&gt;EditorView;</span><br><span class="line">    EditorView--&gt;DOMEvent;</span><br><span class="line">    DOMEvent--&gt;Transaction;</span><br><span class="line">    Transaction--&gt;EditorState;</span><br></pre></td></tr></table></figure>
-<hr>
-<p>Wetab笔记基于 <a href="https://milkdown.dev/">Milkdown</a> 完成</p>
+    <title>离人</title>
+    <url>/post/14e24de8.html</url>
+    <content><![CDATA[<h2 id="1">1</h2>
+<p>不懂事的老小孩，家里人都不关注的笨蛋，忘了给自家孙子上户口的生产队队长，拿自己儿子名字贷款给队里的工程的老不修，“人穷水都穷”连个孙娃子都收拾不干净的老头——以上，就是多年以后还留在我脑海中关于爷爷的全部印象了。</p>
+<p>还记得那个三年级的午后，外婆来学校接我，说带我去看爷爷，我懵懵懂懂地跟着去了，看完了，懵懵懂懂地走了，哦，原来是爷爷帮人插秧的时候晕倒了，没抢救回来，于是，我很自然的接受了这样一个事实——爷爷死了，那个编了一天的竹篾拿去换点钱给小孙子买饮料的老头死了。</p>
+<p>因为家庭的原因，我从很小的时候就一直是跟着外公外婆家一起生活的，对于这个爷爷，了解也就十分有限。倒不如说，关于他的很多事，很多印象，全是从外公外婆和爸妈口中听来，最后自行拼接而成的。每逢过年，都是必须要要去上坟的，在这个时候，听一听爸妈讲讲他过去的事，听一听爸妈给他讲他走之后他儿孙的事，再祈愿老人家在天之灵给现世的人保佑，在香蜡钱纸燃烧的火光中、在噼里啪啦的鞭炮声中，代际间的传承就就以这样的形式完成了。</p>
+<h2 id="2">2</h2>
+<p>年龄和脾气之间肯定是有一定关系的，无他，从我自己的经验来看就是这样，从我身边的人变化来看也是这样。</p>
+<p>小学的时候吧，我的邻居家有个年龄很大的老太太，她家养了一条老母狗，很凶，真的很凶，每天我去上学从他家门口经过都心惊肉跳，走的次数多了，最后还是没躲过被咬了一回，因此，我对老太太印象也非常不好。</p>
+<p>那一年，老太太家的枇杷树结果了，很多很大，我很馋，馋但是不敢。后来，老太太叫我自己上树去摘就是了，小孩子哪能受得了鼓励，坐在树上就开始一顿吃。外公刚干完活回来，见我坐在邻居家的枇杷树上大吃，很生气地叫我下来，我没理他，没想到竟然扔小石子过来，于是，我大哭着回家了。外婆回来，知道了情况，抄起二指宽的篾条就朝外公身上打去，一边打一遍骂，“哪有你这样教育娃娃的，那是拿石头打的吗，不晓得轻重，你看我今天打不打得你好看”。</p>
+<p>暴躁，不知轻重，大概就是那时候外公的脾气了。</p>
+<p>上高中了，我运气好，在同学的推荐下得到了市高中的青睐，分数上线就要，免学杂费。当时也没有月假一说，法定假期中时间长点的才能回家，于是，回家的次数就这样变少了。奇怪的是，我跟外公这个老头的关系倒是莫名其妙好了很多，好像几天不见这个人就褪去了往日的暴躁，转身拥抱了相反的平和。家里的打米机不好用了，一看是筛子坏了，行，你小子去街上买一张回来吧；今天要抽水去灌那片花生地，走吧，咱爷俩一块把水管和水泵扛过去；读了几天书手脚也没变慢嘛，还阔以，今天就把这片谷子打完了；“人民渠嘛，还是我切修的，当时毛老汉……”；“嗯，东西拿齐没得，武汉也没得好远嘛，当年我也是切过那边了，你切了好生学习哈，上大学了也不是给你放松的，嗯，屋头我晓得，你走嘛”……</p>
+<p>平和，宁静，像一坛老酒，这是那时候外公的脾气。</p>
+<h2 id="3">3</h2>
+<p>一晃又是几年，好似我从未认真看过外公这个老头一样，他怎么一下子这么瘦弱了，弯腰驼背的了，眼神没有往日的犀利，嘴角却含着似有若无的笑意，像村里那口老井，记录了一切但是又将其深深埋在水底，几无人可触达。</p>
+<p>前不久爸打电话给我，告诉我外公确诊了胃癌，叫我给家里打个电话好歹问一下，但是我一直不敢往家里打电话，我在害怕，在逃避，害怕自己辜负他们的期待，害怕看见他们的眼神，害怕听见他们的声音，我在逃避自己的责任，但是我又还能再躲多久呢？</p>
+<p>曾经我对皮包骨头这个词的印象只停留在字典里，直到我再见到我的外公，那是怎样的一副光景？曾经力担千斤的肌肉再没有一丝一毫留存在这个老人身上，肋骨勾勒出的胸膛就这样毫无遮掩地展现着，同弯曲的脊梁骨一起狰狞地展示着时间的伟力，展示着“病”这一人世间大苦楚的威力，眉头轻蹙的样子像是在忍受着无时无刻不在的痛楚，我简直不忍再看。面对着这一切，我无话可说，我无能为力，世上难道还有什么东西能再换回这个老人的时光吗？</p>
+<p>树欲静而风不止，子欲养而亲不待。初闻不识曲中意，再听已是曲中人。罢，珍惜眼前人吧。</p>
+<h2 id="end">end</h2>
+<p>“真没想到我们在这样一个地方告别，但是跟人告别的时候，还是要用力一点，因为你多说一句，说不定就是最后一句，多看一眼，弄不好就是最后一眼。”——《后会无期》</p>
 ]]></content>
+      <categories>
+        <category>Life</category>
+      </categories>
       <tags>
-        <tag>Markdown</tag>
+        <tag>随想</tag>
       </tags>
   </entry>
 </search>
