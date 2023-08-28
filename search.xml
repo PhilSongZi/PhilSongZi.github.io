@@ -1,92 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Wetab</title>
-    <url>/post/32e2265d.html</url>
-    <content><![CDATA[<blockquote>
-<p>Wetab笔记，给你更好的笔记体验</p>
-<p>这里是<a href="https://www.wetab.link">Wetab新标签官网</a> (右键点击打开链接)</p>
-</blockquote>
-<p>以下特性可以为你的笔记带来非常棒的体验：</p>
-<ul>
-<li>
-<p>[x] 📝 <strong>所见即所得的 Markdown</strong> - 以一种优雅的方式编写 markdown</p>
-</li>
-<li>
-<p>[x] 👍 <strong>Emoji</strong> - 支持 emoji 快捷指令和选择器</p>
-</li>
-<li>
-<p>[x] 💾 <strong>剪贴板</strong> - 支持 markdown 格式的复制粘贴</p>
-</li>
-<li>
-<p>[x] ⌨️ <strong>换行模式</strong> - 你可以使用“Enter”和“Shift + Enter”两种方式进行换行</p>
-</li>
-<li>
-<p>[x] ⚡ <strong>斜线指令</strong> - 在空白处输入状态下通过“/”可以完成丰富的输入指令</p>
-</li>
-<li>
-<p>[x] 🧮 <strong>数学支持</strong> - 你可以完成数学公式的描写</p>
-</li>
-<li>
-<p>[x] 📊 <strong>表格支持</strong> - 拥有流畅的 ui 的表格支持</p>
-</li>
-<li>
-<p>[x] 📰 <strong>图表支持</strong> - 基于<a href="https://mermaid-js.github.io/mermaid/#/">mermaid</a>的图表支持</p>
-</li>
-</ul>
-<hr>
-<p>你可以添加行内代码例如 <code>inline code</code> 和代码块：</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">main</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">info</span>(<span class="string">&quot;Hello world!&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>Tips: 使用<code>Mod-Enter</code>来退出块级元素，例如代码块。</p>
-</blockquote>
-<hr>
-<p>你可以输入<code>||</code>和一个空格来创建表格：</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">表头 1</th>
-<th style="text-align:center">表头 2</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">内容 1</td>
-<td style="text-align:center"><s>内容 1</s></td>
-</tr>
-<tr>
-<td style="text-align:left">内容 2</td>
-<td style="text-align:center"><strong>内容</strong> 2</td>
-</tr>
-</tbody>
-</table>
-<hr>
-<p>数学公式通过 <a href="https://en.wikipedia.org/wiki/TeX">TeX 表达式</a>支持。</p>
-<p>这里我们有行内公式： $E = mc^2$，你可以点击并编辑它。</p>
-<p>数学公式块也是支持的。</p>
-<p>$$<br>
-\begin{aligned}<br>
-T( (v_1 + v_2) \otimes w) &amp;= T(v_1 \otimes w) + T(v_2 \otimes w) \<br>
-T( v \otimes (w_1 + w_2)) &amp;= T(v \otimes w_1) + T(v \otimes w_2) \<br>
-T( (\alpha v) \otimes w ) &amp;= T( \alpha ( v \otimes w) ) \<br>
-T( v \otimes (\alpha w) ) &amp;= T( \alpha ( v \otimes w) ) \<br>
-\end{aligned}<br>
-$$</p>
-<p>你可以输入<code>$$</code>和一个空格来创建数学公式块。</p>
-<hr>
-<p>使用 <a href="https://www.webfx.com/tools/emoji-cheat-sheet/">emoji 快捷指令</a> 例如 <code>:+1:</code> 来添加 emoji.</p>
-<p>在输入时，你也许注意到了 emoji 过滤器，尝试输入<code>:baby</code>来查看它。</p>
-<hr>
-<p>你可以输入 <code>```mermaid</code> 来添加图表。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">graph TD;</span><br><span class="line">    EditorState--&gt;EditorView;</span><br><span class="line">    EditorView--&gt;DOMEvent;</span><br><span class="line">    DOMEvent--&gt;Transaction;</span><br><span class="line">    Transaction--&gt;EditorState;</span><br></pre></td></tr></table></figure>
-<hr>
-<p>Wetab笔记基于 <a href="https://milkdown.dev/">Milkdown</a> 完成</p>
-]]></content>
-      <tags>
-        <tag>Markdown</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>MYDB记录</title>
     <url>/post/7e29e8fb.html</url>
     <content><![CDATA[<h2 id="1-clone-本地运行">1. clone&amp;本地运行</h2>
@@ -218,6 +132,217 @@ $$</p>
       <tags>
         <tag>MYDB</tag>
         <tag>轮子</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Wetab</title>
+    <url>/post/32e2265d.html</url>
+    <content><![CDATA[<blockquote>
+<p>Wetab笔记，给你更好的笔记体验</p>
+<p>这里是<a href="https://www.wetab.link">Wetab新标签官网</a> (右键点击打开链接)</p>
+</blockquote>
+<p>以下特性可以为你的笔记带来非常棒的体验：</p>
+<ul>
+<li>
+<p>[x] 📝 <strong>所见即所得的 Markdown</strong> - 以一种优雅的方式编写 markdown</p>
+</li>
+<li>
+<p>[x] 👍 <strong>Emoji</strong> - 支持 emoji 快捷指令和选择器</p>
+</li>
+<li>
+<p>[x] 💾 <strong>剪贴板</strong> - 支持 markdown 格式的复制粘贴</p>
+</li>
+<li>
+<p>[x] ⌨️ <strong>换行模式</strong> - 你可以使用“Enter”和“Shift + Enter”两种方式进行换行</p>
+</li>
+<li>
+<p>[x] ⚡ <strong>斜线指令</strong> - 在空白处输入状态下通过“/”可以完成丰富的输入指令</p>
+</li>
+<li>
+<p>[x] 🧮 <strong>数学支持</strong> - 你可以完成数学公式的描写</p>
+</li>
+<li>
+<p>[x] 📊 <strong>表格支持</strong> - 拥有流畅的 ui 的表格支持</p>
+</li>
+<li>
+<p>[x] 📰 <strong>图表支持</strong> - 基于<a href="https://mermaid-js.github.io/mermaid/#/">mermaid</a>的图表支持</p>
+</li>
+</ul>
+<hr>
+<p>你可以添加行内代码例如 <code>inline code</code> 和代码块：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">main</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">info</span>(<span class="string">&quot;Hello world!&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Tips: 使用<code>Mod-Enter</code>来退出块级元素，例如代码块。</p>
+</blockquote>
+<hr>
+<p>你可以输入<code>||</code>和一个空格来创建表格：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">表头 1</th>
+<th style="text-align:center">表头 2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">内容 1</td>
+<td style="text-align:center"><s>内容 1</s></td>
+</tr>
+<tr>
+<td style="text-align:left">内容 2</td>
+<td style="text-align:center"><strong>内容</strong> 2</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p>数学公式通过 <a href="https://en.wikipedia.org/wiki/TeX">TeX 表达式</a>支持。</p>
+<p>这里我们有行内公式： $E = mc^2$，你可以点击并编辑它。</p>
+<p>数学公式块也是支持的。</p>
+<p>$$<br>
+\begin{aligned}<br>
+T( (v_1 + v_2) \otimes w) &amp;= T(v_1 \otimes w) + T(v_2 \otimes w) \<br>
+T( v \otimes (w_1 + w_2)) &amp;= T(v \otimes w_1) + T(v \otimes w_2) \<br>
+T( (\alpha v) \otimes w ) &amp;= T( \alpha ( v \otimes w) ) \<br>
+T( v \otimes (\alpha w) ) &amp;= T( \alpha ( v \otimes w) ) \<br>
+\end{aligned}<br>
+$$</p>
+<p>你可以输入<code>$$</code>和一个空格来创建数学公式块。</p>
+<hr>
+<p>使用 <a href="https://www.webfx.com/tools/emoji-cheat-sheet/">emoji 快捷指令</a> 例如 <code>:+1:</code> 来添加 emoji.</p>
+<p>在输入时，你也许注意到了 emoji 过滤器，尝试输入<code>:baby</code>来查看它。</p>
+<hr>
+<p>你可以输入 <code>```mermaid</code> 来添加图表。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">graph TD;</span><br><span class="line">    EditorState--&gt;EditorView;</span><br><span class="line">    EditorView--&gt;DOMEvent;</span><br><span class="line">    DOMEvent--&gt;Transaction;</span><br><span class="line">    Transaction--&gt;EditorState;</span><br></pre></td></tr></table></figure>
+<hr>
+<p>Wetab笔记基于 <a href="https://milkdown.dev/">Milkdown</a> 完成</p>
+]]></content>
+      <tags>
+        <tag>Markdown</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>过滤器Filter</title>
+    <url>/post/31fabe4c.html</url>
+    <content><![CDATA[<h3 id="Filter">Filter</h3>
+<h4 id="filter-流程">filter 流程</h4>
+<p><img src="https://www.yuque.com/api/filetransfer/images?url=https%3A%2F%2Fspring.hhui.top%2Fspring-blog%2Fimgs%2F190323%2F00.jpg&amp;sign=dbe2eb02c85bcb96cd3078214dbf49d629aed33c3fd6cf8aff8a4839d5e2dabf" alt="img"></p>
+<p>一个 http 请求过来之后：</p>
+<ul>
+<li>首先进入 filter，执行相关业务逻辑</li>
+<li>若判定通行，则进入 Servlet 逻辑，Servlet 执行完毕之后，又返回 Filter，最后在返回给请求方</li>
+<li>判定失败，直接返回，不需要将请求发给 Servlet</li>
+</ul>
+<h4 id="应用场景">应用场景</h4>
+<ul>
+<li>在 filter 层，获取用户的身份</li>
+<li>可以考虑在 filter 层做一些常规的校验 (如参数校验，referer 校验、权限控制等)</li>
+<li>可以在 filter 层做运维、安全防护相关的工作(如全链路打点，可以在 flter 层分配一个 traceld;也可以在这一层做限流等)</li>
+</ul>
+<h4 id="使用">使用</h4>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">@Slf4j</span><br><span class="line">@WebFilter(urlPatterns = &quot;/*&quot;, filterName = &quot;reqRecordFilter&quot;, asyncSupported = true)</span><br><span class="line">public class ReqRecordFilter implements Filter &#123;</span><br><span class="line">    private static Logger REQ_LOG = LoggerFactory.getLogger(&quot;req&quot;);</span><br><span class="line">    /**</span><br><span class="line">     * 返回给前端的traceId，用于日志追踪</span><br><span class="line">     */</span><br><span class="line">    private static final String GLOBAL_TRACE_ID_HEADER = &quot;g-trace-id&quot;;</span><br><span class="line"></span><br><span class="line">    @Autowired</span><br><span class="line">    private GlobalInitService globalInitService;</span><br><span class="line"></span><br><span class="line">    @Autowired</span><br><span class="line">    private StatisticsSettingService statisticsSettingService;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public void init(FilterConfig filterConfig) &#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException &#123;</span><br><span class="line">        long start = System.currentTimeMillis();</span><br><span class="line">        HttpServletRequest request = null;</span><br><span class="line">        try &#123;</span><br><span class="line">            request = this.initReqInfo((HttpServletRequest) servletRequest, (HttpServletResponse) servletResponse);</span><br><span class="line">            CrossUtil.buildCors(request, (HttpServletResponse) servletResponse);</span><br><span class="line">            filterChain.doFilter(request, servletResponse);</span><br><span class="line">        &#125; finally &#123;</span><br><span class="line">            buildRequestLog(ReqInfoContext.getReqInfo(), request, System.currentTimeMillis() - start);</span><br><span class="line">            // 一个链路请求完毕，清空MDC相关的变量(如GlobalTraceId，用户信息)</span><br><span class="line">            MdcUtil.clear();</span><br><span class="line">            ReqInfoContext.clear();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">  	@Override</span><br><span class="line">    public void destroy() &#123;</span><br><span class="line">    &#125;</span><br><span class="line">  	# ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>
+<p>init：初始化时执行</p>
+</li>
+<li>
+<p>destory： 销毁时执行</p>
+</li>
+<li>
+<p>doFilter：filter 规则命中的请求，都会走进来</p>
+</li>
+<li>
+<ul>
+<li>三个参数，注意第三个 FilterChain，这里是经典的责任链设计模式</li>
+<li>执行 filterChain.doFilter(servletRequest，servletResponse) 表示会继续将请求执行下去若不执行这一句，表示这一次的 http 请求到此为止了，后面的走不下去了</li>
+</ul>
+</li>
+</ul>
+<h4 id="注册（过滤器Filter注册到Spring容器）">注册（过滤器Filter注册到Spring容器）</h4>
+<ol>
+<li>使用 @WebFilter 注解，标注到自己实现的过滤器上</li>
+</ol>
+<p>WebFilter 常用属性如下，其中 urIPatterns 最为常用，表示这个 flter 适用于哪些 url 请求(默认场景下全部请求都被拦截)</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>fileName</td>
+<td>String</td>
+<td>指定过滤器的 name 属性，等价于 <filter-name>。</td>
+</tr>
+<tr>
+<td>value</td>
+<td>String[]</td>
+<td>该属性等价于 urlPatterns 属性，但是两者不应同时使用。</td>
+</tr>
+<tr>
+<td>urlPatterns</td>
+<td>String[]</td>
+<td>指定一组过滤器的URL匹配模式。等价于<url-pattern>标签。</td>
+</tr>
+<tr>
+<td>srvletNames</td>
+<td>String[]</td>
+<td>指定过滤器将应用于哪些Servlet。取值是 @WebSerlvet 中的name属性的取值，或者是web.xml中的<servlet-name>的取值。</td>
+</tr>
+<tr>
+<td>dispatcherTypes</td>
+<td>DispatcherType</td>
+<td>指定过滤器的转发模式，具体取值包括：ASYNC/ERROR/FORWARD/INCLUDE/REQUEST.</td>
+</tr>
+<tr>
+<td>initParams</td>
+<td>WebinitParam[]</td>
+<td>指定一组过滤器初始化参数，等价于<init-param>标签。</td>
+</tr>
+<tr>
+<td>asyncSupported</td>
+<td>boolean</td>
+<td>声明过滤器是否支持异步操作模式，等价于<async-supported>标签。</td>
+</tr>
+<tr>
+<td>description</td>
+<td>String</td>
+<td>该过滤器的描述信息，等价于<description>标签。</td>
+</tr>
+<tr>
+<td>displayName</td>
+<td>String</td>
+<td>该过滤器的显示名，通常配合工具使用，等价于 <display-name> 标签</td>
+</tr>
+</tbody>
+</table>
+<p>使用这个注解时，请注意，需要在<strong>启动类/配置类</strong>上添加 <strong>ServletComponentScan</strong> 注解来启用.</p>
+<p><strong>注意点1</strong>：@WebFilter 注解结合@Order 来定义 filter 注解，可能并不会生效。</p>
+<p><strong>注意点2</strong>：@WebFilter 声明的Filter，优先级为 2147483647 (最低优先级）。</p>
+<ol start="2">
+<li>FilterRegistrationBean</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">@Bean</span><br><span class="line">public FilterRegistrationBean&lt;Filter&gt; orderFilter() &#123;</span><br><span class="line">		FilterRegistrationBean&lt;Filter&gt; filter = new FilterRegistrationBean&lt;&gt;();</span><br><span class="line">		filter.setName(&quot;regRecordFilter&quot;);</span><br><span class="line">		filter.seturlPatterns(Arrays.asList(&quot;/**&quot;));</span><br><span class="line">		filter.setFilter(new RegRecordFilter());  //指定优先级</span><br><span class="line">		filter.setorder(-1);</span><br><span class="line">		return filter;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="实例">实例</h4>
+<p>技术派中，Filter 应用到了以下几个地方:</p>
+<ul>
+<li>身份识别，并保存身份到 RegInfoContext 上下文中。详情博文: <a href="https://www.yuque.com/itwanger/az7yww/yk1x4v6wt5gz103q">https://www.yuque.com/itwanger/az7yww/yk1x4v6wt5gz103q</a></li>
+<li>记录请求记录，详情博文: <a href="https://www.yuque.com/itwanger/az7yww/wb3pz26699c86nuz">https://www.yuque.com/itwanger/az7yww/wb3pz26699c86nuz</a></li>
+<li>添加跨域支持，详情博文: <a href="https://www.yuque.com/itwanger/az7yww/pznv1robndgbuyhh">https://www.yuque.com/itwanger/az7yww/pznv1robndgbuyhh</a></li>
+</ul>
+<h4 id="filter-在技术派中的应用总结">filter 在技术派中的应用总结</h4>
+<p><img src="https://cdn.nlark.com/yuque/0/2023/png/35904594/1693227389336-59e1e8c1-aa85-450d-911d-2e4dacffadbb.png" alt="img"></p>
+<h4 id="最后">最后</h4>
+<p><a href="https://github.com/itwanger/paicoding">技术派项目地址</a></p>
+]]></content>
+      <categories>
+        <category>coding</category>
+        <category>web</category>
+      </categories>
+      <tags>
+        <tag>web</tag>
       </tags>
   </entry>
   <entry>
