@@ -1,136 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Wetab</title>
-    <url>/post/32e2265d.html</url>
-    <content><![CDATA[<blockquote>
-<p>Wetab笔记，给你更好的笔记体验</p>
-<p>这里是<a href="https://www.wetab.link">Wetab新标签官网</a> (右键点击打开链接)</p>
-</blockquote>
-<p>以下特性可以为你的笔记带来非常棒的体验：</p>
-<ul>
-<li>
-<p>[x] 📝 <strong>所见即所得的 Markdown</strong> - 以一种优雅的方式编写 markdown</p>
-</li>
-<li>
-<p>[x] 👍 <strong>Emoji</strong> - 支持 emoji 快捷指令和选择器</p>
-</li>
-<li>
-<p>[x] 💾 <strong>剪贴板</strong> - 支持 markdown 格式的复制粘贴</p>
-</li>
-<li>
-<p>[x] ⌨️ <strong>换行模式</strong> - 你可以使用“Enter”和“Shift + Enter”两种方式进行换行</p>
-</li>
-<li>
-<p>[x] ⚡ <strong>斜线指令</strong> - 在空白处输入状态下通过“/”可以完成丰富的输入指令</p>
-</li>
-<li>
-<p>[x] 🧮 <strong>数学支持</strong> - 你可以完成数学公式的描写</p>
-</li>
-<li>
-<p>[x] 📊 <strong>表格支持</strong> - 拥有流畅的 ui 的表格支持</p>
-</li>
-<li>
-<p>[x] 📰 <strong>图表支持</strong> - 基于<a href="https://mermaid-js.github.io/mermaid/#/">mermaid</a>的图表支持</p>
-</li>
-</ul>
-<hr>
-<p>你可以添加行内代码例如 <code>inline code</code> 和代码块：</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">main</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">info</span>(<span class="string">&quot;Hello world!&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>Tips: 使用<code>Mod-Enter</code>来退出块级元素，例如代码块。</p>
-</blockquote>
-<hr>
-<p>你可以输入<code>||</code>和一个空格来创建表格：</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">表头 1</th>
-<th style="text-align:center">表头 2</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">内容 1</td>
-<td style="text-align:center"><s>内容 1</s></td>
-</tr>
-<tr>
-<td style="text-align:left">内容 2</td>
-<td style="text-align:center"><strong>内容</strong> 2</td>
-</tr>
-</tbody>
-</table>
-<hr>
-<p>数学公式通过 <a href="https://en.wikipedia.org/wiki/TeX">TeX 表达式</a>支持。</p>
-<p>这里我们有行内公式： $E = mc^2$，你可以点击并编辑它。</p>
-<p>数学公式块也是支持的。</p>
-<p>$$<br>
-\begin{aligned}<br>
-T( (v_1 + v_2) \otimes w) &amp;= T(v_1 \otimes w) + T(v_2 \otimes w) \<br>
-T( v \otimes (w_1 + w_2)) &amp;= T(v \otimes w_1) + T(v \otimes w_2) \<br>
-T( (\alpha v) \otimes w ) &amp;= T( \alpha ( v \otimes w) ) \<br>
-T( v \otimes (\alpha w) ) &amp;= T( \alpha ( v \otimes w) ) \<br>
-\end{aligned}<br>
-$$</p>
-<p>你可以输入<code>$$</code>和一个空格来创建数学公式块。</p>
-<hr>
-<p>使用 <a href="https://www.webfx.com/tools/emoji-cheat-sheet/">emoji 快捷指令</a> 例如 <code>:+1:</code> 来添加 emoji.</p>
-<p>在输入时，你也许注意到了 emoji 过滤器，尝试输入<code>:baby</code>来查看它。</p>
-<hr>
-<p>你可以输入 <code>```mermaid</code> 来添加图表。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">graph TD;</span><br><span class="line">    EditorState--&gt;EditorView;</span><br><span class="line">    EditorView--&gt;DOMEvent;</span><br><span class="line">    DOMEvent--&gt;Transaction;</span><br><span class="line">    Transaction--&gt;EditorState;</span><br></pre></td></tr></table></figure>
-<hr>
-<p>Wetab笔记基于 <a href="https://milkdown.dev/">Milkdown</a> 完成</p>
-]]></content>
-      <tags>
-        <tag>Markdown</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Ubuntu(wsl)安装Redis并搭建集群</title>
-    <url>/post/ac35e331.html</url>
-    <content><![CDATA[<h2 id="Ubuntu（wsl）安装Redis并搭建集群">Ubuntu（wsl）安装Redis并搭建集群</h2>
-<h3 id="起因">起因</h3>
-<p>配置Redis集群，Windows本机已经有了Redis，就想在wsl中装Redis集群。</p>
-<h3 id="踩坑历程">踩坑历程</h3>
-<ol>
-<li>还就那个经典的：</li>
-</ol>
-<p>启动wsl时报错 <code>占位程序接收到错误数据。 Error code: Wsl/Service/0x800706f7</code>。行吧，不连梯子上不去网站，连上梯子就总有幺蛾子。解决办法：终端管理员权限运行<code>netsh winsock reset</code>，或者使用<code>NoLSP.exe</code>启动wsl。</p>
-<ol start="2">
-<li>Redis 安装：</li>
-</ol>
-<p>从<a href="http://download.redis.io/releases/">redis发行网站</a>上下载最新版本的<code>redis-7.2.0.tar.gz</code>，解压，cd到目录下，<code>make</code>构建。</p>
-<p>来力：</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">(.<span class="property">venv</span>) vagrant@<span class="attr">vagrant</span>:<span class="regexp">/vagrant/</span>redis-<span class="number">6.0</span><span class="number">.6</span>$ make</span><br><span class="line">cd src &amp;&amp; make all</span><br><span class="line">make[<span class="number">1</span>]: <span class="title class_">Entering</span> directory <span class="string">&#x27;/vagrant/redis-6.0.6/src&#x27;</span></span><br><span class="line">/bin/<span class="attr">sh</span>: <span class="number">1</span>: pkg-<span class="attr">config</span>: not found</span><br><span class="line">    <span class="variable constant_">CC</span> <span class="title class_">Makefile</span>.<span class="property">dep</span></span><br><span class="line">/bin/<span class="attr">sh</span>: <span class="number">1</span>: pkg-<span class="attr">config</span>: not found</span><br><span class="line">make[<span class="number">1</span>]: <span class="title class_">Warning</span>: <span class="title class_">File</span> <span class="string">&#x27;Makefile.dep&#x27;</span> has modification time <span class="number">1.3</span> s <span class="keyword">in</span> the future</span><br><span class="line">    <span class="variable constant_">CC</span> adlist.<span class="property">o</span></span><br><span class="line">/bin/<span class="attr">sh</span>: <span class="number">1</span>: <span class="attr">cc</span>: not found</span><br><span class="line"><span class="title class_">Makefile</span>:<span class="number">315</span>: recipe <span class="keyword">for</span> target <span class="string">&#x27;adlist.o&#x27;</span> failed</span><br><span class="line">make[<span class="number">1</span>]: *** [adlist.<span class="property">o</span>] <span class="title class_">Error</span> <span class="number">127</span></span><br><span class="line">make[<span class="number">1</span>]: <span class="title class_">Leaving</span> directory <span class="string">&#x27;/vagrant/redis-6.0.6/src&#x27;</span></span><br><span class="line"><span class="title class_">Makefile</span>:<span class="number">6</span>: recipe <span class="keyword">for</span> target <span class="string">&#x27;all&#x27;</span> failed</span><br><span class="line"><span class="attr">make</span>: *** [all] <span class="title class_">Error</span> <span class="number">2</span></span><br></pre></td></tr></table></figure>
-<p>解决办法：</p>
-<ul>
-<li>少了<code>pkg-config</code>，安装之，顺便安装了<code>gcc</code>和<code>tcl</code>（没有<code>tcl</code>在 <code>make test</code>时会报错）。</li>
-<li>安装<code>gcc</code>和<code>tcl</code>时会出现：<code>/sbin/ldconfig.real: /usr/lib/wsl/lib/libcuda.so.1 is not a symbolic link</code>这个问题，可<a href="https://github.com/microsoft/WSL/issues/5663">参考链接</a>（目前未深究……）。</li>
-<li>然后删除解压出来的 redis 文件夹，重新解压再重新 make 。大成功。参考：<a href="https://stackoverflow.com/questions/63611270/redis-make-failing-ubuntu-18-04">ubuntu(wsl)安装redis时make报错</a></li>
-</ul>
-<p><img src="/post/ac35e331/Redis%E5%AE%89%E8%A3%85.jpg" alt="img"></p>
-<ol start="3">
-<li>Redis集群设置</li>
-</ol>
-<p>搭建三个节点，对应端口分别是7000,7001,7002。配置如下：<a href="https://blog.hhui.top/hexblog/2019/09/25/190925-Redis%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA%E6%89%8B%E5%86%8C/">Redis集群搭建手册</a></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">mkdir -p data/7000 data/7001 data/7002 log/7000 log/7001 log/7002 </span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">下面的配置，一次操作三遍，分别获得r7000.conf r7001.conf r7002.conf</span></span><br><span class="line">cp redis.conf r7000.conf</span><br><span class="line">vim r7000.conf</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># 下面是我们需要修改的地方</span></span></span><br><span class="line">port 7000 # 端口号</span><br><span class="line">pidfile /var/run/redis_7000.pid # pid进程文件</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">日志和数据存储路径</span></span><br><span class="line">logfile &quot;/home/yihui/redis/log/7000/redis.log&quot;</span><br><span class="line">dir &quot;/home/yihui/redis/data/7000/&quot;</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">后台启动</span></span><br><span class="line">daemonize yes</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">开启集群</span></span><br><span class="line">cluster-enabled yes</span><br></pre></td></tr></table></figure>
-<p>启动Redis，设置集群，集群至少需要三主节点，设置主从时最少要六个节点，不是很有必要啊，直接不要从节点了：</p>
-<p><img src="/post/ac35e331/Redis%E9%9B%86%E7%BE%A4%E8%AE%BE%E7%BD%AE.jpg" alt="img"></p>
-<p>最后用<code>redis-cli</code>测试一下：</p>
-<p><img src="/post/ac35e331/Redis%E9%9B%86%E7%BE%A4%E6%B5%8B%E8%AF%95.jpg" alt="img"></p>
-<h3 id="番外">番外</h3>
-<p>关于<code>hexo</code>中图片显示问题，<a href="https://blog.csdn.net/m0_43401436/article/details/107191688">这里</a>讲得很清楚，csdn 中难得的好文了。</p>
-]]></content>
-      <categories>
-        <category>Coding</category>
-      </categories>
-      <tags>
-        <tag>Ubuntu</tag>
-        <tag>wsl</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>MYDB记录</title>
     <url>/post/7e29e8fb.html</url>
     <content><![CDATA[<h2 id="1-clone-本地运行">1. clone&amp;本地运行</h2>
@@ -510,13 +380,250 @@ $$</p>
       </tags>
   </entry>
   <entry>
+    <title>VueCoreLanguage</title>
+    <url>/post/2eb6dd78.html</url>
+    <content><![CDATA[<h2 id="1-介绍-入门">1. 介绍&amp;入门</h2>
+<h3 id="是什么">是什么</h3>
+<p>Vue (读音 /vjuː/，类似于 view) 是一套用于构建用户界面的渐进式框架。与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应用。Vue 的核心库只关注视图层，不仅易于上手，还便于与第三方库或既有项目整合。另一方面，当与现代化的工具链以及各种支持类库结合使用时，Vue 也完全能够为复杂的单页应用提供驱动。</p>
+<h2 id="2-核心语法">2. 核心语法</h2>
+<h3 id="栗子">栗子</h3>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">  &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">  &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=, chrome&quot;&gt;</span><br><span class="line">  &lt;meta name=&quot;viewport&quot; content=&quot;width=, initial-scale=1.0&quot;&gt;</span><br><span class="line">  &lt;title&gt;VueLearning Time&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;div id=&quot;app&quot;&gt;</span><br><span class="line">    &lt;!-- 1.2 插值表达式 --&gt;</span><br><span class="line">    &lt;p&gt;&#123;&#123; title &#125;&#125;&lt;/p&gt;</span><br><span class="line">    &lt;!-- &lt;p&gt;&#123;&#123; content &#125;&#125;&lt;/p&gt; --&gt;</span><br><span class="line">    &lt;!-- &lt;p&gt;&#123;&#123; 1+2+3&#125;&#125;&lt;/p&gt; --&gt;</span><br><span class="line">    &lt;!-- &lt;p&gt;&#123;&#123; 1 &gt; 2 ? &#x27;对&#x27; : &#x27;错&#x27;&#125;&#125;&lt;/p&gt; --&gt;</span><br><span class="line">    &lt;!-- 可以看到 method 方法（output()）执行了三次，computed 计算属性（outputContent）执行了一次 --&gt;</span><br><span class="line">    &lt;!-- &lt;p&gt;&#123;&#123; output() &#125;&#125;&lt;/p&gt;</span><br><span class="line">    &lt;p&gt;&#123;&#123; output() &#125;&#125;&lt;/p&gt;</span><br><span class="line">    &lt;p&gt;&#123;&#123; output() &#125;&#125;&lt;/p&gt;</span><br><span class="line">    &lt;p&gt;&#123;&#123; outputContent &#125;&#125;&lt;/p&gt;</span><br><span class="line">    &lt;p&gt;&#123;&#123; outputContent &#125;&#125;&lt;/p&gt;</span><br><span class="line">    &lt;p&gt;&#123;&#123; outputContent &#125;&#125;&lt;/p&gt;  --&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- 4.指令：内容指令，渲染指令，属性指令 --&gt;</span><br><span class="line">    &lt;!-- 内容指令 --&gt;</span><br><span class="line">    &lt;!-- &lt;p v-text=&quot;htmlContent&quot;&gt;123&lt;/p&gt; --&gt;</span><br><span class="line">    &lt;!-- &lt;p v-html=&quot;htmlContent&quot;&gt;123&lt;/p&gt; --&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- 渲染指令 --&gt;</span><br><span class="line">    &lt;!-- &lt;p v-for=&quot;item in 5&quot;&gt;这是内容&lt;/p&gt; --&gt;</span><br><span class="line">    &lt;!-- &lt;p v-for=&quot;(item, key, index) in obj&quot;&gt;这是内容：&#123;&#123; item &#125;&#125;&#123;&#123; key &#125;&#125;&#123;&#123; index &#125;&#125;&lt;/p&gt;  在循环中会产生索引&gt; --&gt;</span><br><span class="line">    &lt;!-- &lt;p v-for=&quot;(item, key, index) in arr&quot;&gt;这是内容：&#123;&#123; item &#125;&#125;&lt;/p&gt; --&gt;</span><br><span class="line">    &lt;!-- &lt;p v-if=&quot;bool&quot;&gt;标签内容&lt;/p&gt; --&gt;</span><br><span class="line">    &lt;!-- &lt;p v-show=&quot;bool&quot;&gt;标签内容&lt;/p&gt; --&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- 属性指令 --&gt;</span><br><span class="line">    &lt;!-- &lt;p v-bind:title=&quot;title&quot;&gt;这是内容&lt;/p&gt; --&gt;</span><br><span class="line">    &lt;!-- &lt;p :title=&quot;title&quot;&gt;这是内容&lt;/p&gt; --&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- 事件指令 --&gt;</span><br><span class="line">    &lt;!-- &lt;button v-on:click=&quot;output&quot;&gt;点击&lt;/button&gt; --&gt;</span><br><span class="line">    &lt;!-- &lt;button @click=&quot;output&quot;&gt;点击&lt;/button&gt; --&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- 表单指令 : v-model 可以实现双向数据绑定--&gt;</span><br><span class="line">    &lt;input v-model=&quot;inputValue&quot; type=&quot;text&quot;&gt;</span><br><span class="line">    &lt;p v-text=&quot;inputValue&quot;&gt;&lt;/p&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- 5.修饰符 --&gt;</span><br><span class="line">    &lt;input v-model.trim=&quot;inputValue&quot; type=&quot;text&quot;&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">  &lt;script src=&quot;./vue.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">  &lt;script&gt;</span><br><span class="line">    const app = new Vue(&#123;</span><br><span class="line">      // 1.响应式数据与插值表达式</span><br><span class="line">      el: &#x27;#app&#x27;, // 挂载点</span><br><span class="line">      data () &#123;</span><br><span class="line">        return &#123;</span><br><span class="line">          title: &#x27;这是标题文本&#x27;,</span><br><span class="line">          content: &#x27;这是内容文本&#x27;,</span><br><span class="line">          htmlContent: &#x27;这是一个&lt;span&gt;span&lt;/span&gt;标签&#x27;,</span><br><span class="line">          arr: [&#x27;a&#x27;, &#x27;b&#x27;, &#x27;c&#x27;, &#x27;d&#x27;],</span><br><span class="line">          obj: &#123;a:10, b:20, c:30, d:40&#125;,</span><br><span class="line">          bool: true,</span><br><span class="line">          inputValue: &#x27;默认输入内容&#x27;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line">      // 1.3 methods 属性</span><br><span class="line">      methods: &#123;</span><br><span class="line">        output () &#123;</span><br><span class="line">          console.log(&#x27;method方法执行了&#x27;)</span><br><span class="line">          return &#x27;标题为：&#x27; + this.title + &#x27;；&#x27; + &#x27;内容为：&#x27; + this.content</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line">      // 2.计算属性：具有缓存性，只有当依赖的数据发生改变时，才会重新执行</span><br><span class="line">      computed: &#123;</span><br><span class="line">        outputContent () &#123;</span><br><span class="line">          console.log(&#x27;computed方法执行了&#x27;)</span><br><span class="line">          return &#x27;标题为：&#x27; + this.title + &#x27;；&#x27; + &#x27;内容为：&#x27; + this.content</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line">      // 3.侦听器：当依赖的数据发生改变时，执行回调函数</span><br><span class="line">      watch: &#123;</span><br><span class="line">        title (newVal, oldVal) &#123;</span><br><span class="line">          console.log(newVal, oldVal)</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">  &lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="响应式数据与插值表达式">响应式数据与插值表达式</h3>
+<h4 id="响应式数据">响应式数据</h4>
+<p>当一个 Vue 实例被创建时，它将 data 对象中的所有的 property 加入到 Vue 的<strong>响应式系统</strong>中。当这些 property 的值发生改变时，视图将会产生“响应”，即匹配更新为新的值。</p>
+<p>数据改变时，视图才会进行重新渲染，注意，当实例创建时就已经存在于<code>data</code>中的 property 才是<strong>响应式</strong>的。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// 新建实例: vm ViewModel</span><br><span class="line">var vm = new Vue (&#123;</span><br><span class="line">  el: &#x27;#example&#x27;,</span><br><span class="line">  data: data</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>每个 Vue 实例在被创建时都要经过一系列的初始化过程——例如，需要设置数据监听、编译模板、将实例挂载到 DOM 并在数据变化时更新 DOM 等。同时在这个过程中也会运行一些叫做<strong>生命周期钩子</strong>的函数，这给了用户在不同阶段添加自己的代码的机会。</p>
+<p>比如 <a href="https://v2.cn.vuejs.org/v2/api/#created">created</a> 钩子可以用来在一个实例被创建之后执行代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">new Vue(&#123;</span><br><span class="line">  data: &#123;</span><br><span class="line">    a: 1</span><br><span class="line">  &#125;,</span><br><span class="line">  created: function () &#123;</span><br><span class="line">    // `this` 指向 vm 实例</span><br><span class="line">    console.log(&#x27;a is: &#x27; + this.a)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line">// =&gt; &quot;a is: 1&quot;</span><br></pre></td></tr></table></figure>
+<p>也有一些其它的钩子，在实例生命周期的不同阶段被调用，如 <a href="https://v2.cn.vuejs.org/v2/api/#mounted">mounted</a>、<a href="https://v2.cn.vuejs.org/v2/api/#updated">updated</a> 和 <a href="https://v2.cn.vuejs.org/v2/api/#destroyed">destroyed</a>。生命周期钩子的 this 上下文指向调用它的 Vue 实例。</p>
+<p>实例的生命周期：</p>
+<p><img src="/post/2eb6dd78/lifecycle.png" alt="lifecycle"></p>
+<h4 id="插值表达式："><strong>插值表达式：</strong></h4>
+<p><strong>文本</strong>：</p>
+<p>“Mustache”语法（双大括号）的文本插值：<code>&lt;span&gt;Message:&#123;&#123; msg &#125;&#125;&lt;/span&gt;</code>。Mustache 标签将会被替代为对应数据对象上 msg property 的值。无论何时，绑定的数据对象上 msg property 发生了改变，插值处的内容都会更新。可以使用<code>v-once</code>指令执行一次性插值。</p>
+<p><strong>HTML</strong>：</p>
+<p>双大括号会将数据解释为普通文本，而非 HTML 代码。为了输出真正的 HTML，需要使用 <a href="https://v2.cn.vuejs.org/v2/api/#v-html">v-html指令</a>：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;p&gt;Using mustaches: &#123;&#123; rawHtml &#125;&#125;&lt;/p&gt;</span><br><span class="line">&lt;p&gt;Using v-html directive: &lt;span v-html=&quot;rawHtml&quot;&gt;&lt;/span&gt;&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+<p>这个 span 的内容将会被替换成为 property 值 rawHtml，直接作为 HTML——会忽略解析 property 值中的数据绑定。注意，你不能使用 v-html 来复合局部模板，因为 Vue 不是基于字符串的模板引擎。反之，对于用户界面 (UI)，组件更适合作为可重用和可组合的基本单位。</p>
+<p><strong>Attribute</strong>：</p>
+<p>Mustache 语法不能作用在 HTML attribute 上，遇到这种情况应该使用 <a href="https://v2.cn.vuejs.org/v2/api/#v-bind">v-bind指令</a>：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-bind:id</span>=<span class="string">&quot;dynamicId&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>对于布尔 attribute ，v-bind ：</p>
+<p>如果 isButtonDisabled 的值是 null、undefined 或 false，则 disabled attribute 甚至不会被包含在渲染出来的 <button> 元素中。</button></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">v-bind:disabled</span>=<span class="string">&quot;isButtonDisabled&quot;</span>&gt;</span>Button<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>JavaScript表达式</strong>：</p>
+<p>表达式会在所属实例的数据作用域下面作为JavaScript被解析。（每个绑定只能包含单个表达式。）</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&#123;&#123; number + <span class="number">1</span> &#125;&#125;</span><br><span class="line"></span><br><span class="line">&#123;&#123; ok ? <span class="string">&#x27;YES&#x27;</span> : <span class="string">&#x27;NO&#x27;</span> &#125;&#125;</span><br><span class="line"></span><br><span class="line">&#123;&#123; message.<span class="title function_">split</span>(<span class="string">&#x27;&#x27;</span>).<span class="title function_">reverse</span>().<span class="title function_">join</span>(<span class="string">&#x27;&#x27;</span>) &#125;&#125;</span><br><span class="line"></span><br><span class="line">&lt;div v-<span class="attr">bind</span>:id=<span class="string">&quot;&#x27;list-&#x27; + id&quot;</span>&gt;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 这是语句，不是表达式 --&gt;</span><br><span class="line">&#123;&#123; <span class="keyword">var</span> a = <span class="number">1</span> &#125;&#125;</span><br><span class="line"></span><br><span class="line">&lt;!-- 流控制也不会生效，请使用三元表达式 --&gt;</span><br><span class="line">&#123;&#123; <span class="keyword">if</span> (ok) &#123; <span class="keyword">return</span> message &#125; &#125;&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="栗子-2">栗子</h4>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">  &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">  &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=, chrome&quot;&gt;</span><br><span class="line">  &lt;meta name=&quot;viewport&quot; content=&quot;width=, initial-scale=1.0&quot;&gt;</span><br><span class="line">  &lt;title&gt;VueLearning Time&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;div id=&quot;app&quot;&gt;</span><br><span class="line">    &lt;!-- 1.2 插值表达式 --&gt;</span><br><span class="line">    &lt;p&gt;&#123;&#123; title &#125;&#125;&lt;/p&gt;</span><br><span class="line">    &lt;!-- &lt;p&gt;&#123;&#123; content &#125;&#125;&lt;/p&gt; --&gt;</span><br><span class="line">    &lt;!-- &lt;p&gt;&#123;&#123; 1+2+3&#125;&#125;&lt;/p&gt; --&gt;</span><br><span class="line">    &lt;!-- &lt;p&gt;&#123;&#123; 1 &gt; 2 ? &#x27;对&#x27; : &#x27;错&#x27;&#125;&#125;&lt;/p&gt; --&gt;</span><br><span class="line">    &lt;!-- 可以看到 method 方法（output()）执行了三次，computed 计算属性（outputContent）执行了一次 --&gt;</span><br><span class="line">    &lt;!-- &lt;p&gt;&#123;&#123; output() &#125;&#125;&lt;/p&gt;</span><br><span class="line">    &lt;p&gt;&#123;&#123; output() &#125;&#125;&lt;/p&gt;</span><br><span class="line">    &lt;p&gt;&#123;&#123; output() &#125;&#125;&lt;/p&gt;</span><br><span class="line">    &lt;p&gt;&#123;&#123; outputContent &#125;&#125;&lt;/p&gt;</span><br><span class="line">    &lt;p&gt;&#123;&#123; outputContent &#125;&#125;&lt;/p&gt;</span><br><span class="line">    &lt;p&gt;&#123;&#123; outputContent &#125;&#125;&lt;/p&gt;  --&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">  &lt;script src=&quot;./vue.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">  &lt;script&gt;</span><br><span class="line">    const app = new Vue(&#123;</span><br><span class="line">      // 1.响应式数据与插值表达式</span><br><span class="line">      el: &#x27;#app&#x27;, // 挂载点</span><br><span class="line">      data () &#123;</span><br><span class="line">        return &#123;</span><br><span class="line">          title: &#x27;这是标题文本&#x27;,</span><br><span class="line">          content: &#x27;这是内容文本&#x27;,</span><br><span class="line">          htmlContent: &#x27;这是一个&lt;span&gt;span&lt;/span&gt;标签&#x27;,</span><br><span class="line">          arr: [&#x27;a&#x27;, &#x27;b&#x27;, &#x27;c&#x27;, &#x27;d&#x27;],</span><br><span class="line">          obj: &#123;a:10, b:20, c:30, d:40&#125;,</span><br><span class="line">          bool: true,</span><br><span class="line">          inputValue: &#x27;默认输入内容&#x27;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line">    &#125;)</span><br><span class="line">  &lt;/script&gt;</span><br><span class="line">  &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="计算属性">计算属性</h3>
+<p>对复杂逻辑的处理，放在计算属性中。</p>
+<p>栗子：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;example&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>Original message: &quot;&#123;&#123; message &#125;&#125;&quot;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>Computed reversed message: &quot;&#123;&#123; reversedMessage &#125;&#125;&quot;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">var vm = new Vue(&#123;</span><br><span class="line">  el: &#x27;#example&#x27;,</span><br><span class="line">  data: &#123;</span><br><span class="line">    message: &#x27;Hello&#x27;</span><br><span class="line">  &#125;,</span><br><span class="line">  computed: &#123;</span><br><span class="line">    // 计算属性的 getter</span><br><span class="line">    reversedMessage: function () &#123;</span><br><span class="line">      // `this` 指向 vm 实例</span><br><span class="line">      return this.message.split(&#x27;&#x27;).reverse().join(&#x27;&#x27;)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>我们可以将同一函数定义为一个方法而非计算属性，两者结果一致，但是<strong>计算属性是基于它们的响应式依赖进行缓存</strong>的，只有在相关响应式依赖发生改变时才会重新求值。</p>
+<p>计算属性的<code>setter</code>：(默认只有 getter 可自定义 setter)</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// ...</span><br><span class="line">computed: &#123;</span><br><span class="line">  fullName: &#123;</span><br><span class="line">    // getter</span><br><span class="line">    get: function () &#123;</span><br><span class="line">      return this.firstName + &#x27; &#x27; + this.lastName</span><br><span class="line">    &#125;,</span><br><span class="line">    // setter</span><br><span class="line">    set: function (newValue) &#123;</span><br><span class="line">      var names = newValue.split(&#x27; &#x27;)</span><br><span class="line">      this.firstName = names[0]</span><br><span class="line">      this.lastName = names[names.length - 1]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">// ...</span><br></pre></td></tr></table></figure>
+<h3 id="侦听器">侦听器</h3>
+<p>当依赖的数据发生改变时，执行回调函数。</p>
+<p>使用场景：需要在数据变化时执行异步或开销较大的操作时，十分优越。</p>
+<p>栗子：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;div id=&quot;demo&quot;&gt;&#123;&#123; fullName &#125;&#125;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">                                     </span><br><span class="line">var vm = new Vue(&#123;</span><br><span class="line">  el: &#x27;#demo&#x27;,</span><br><span class="line">  data: &#123;</span><br><span class="line">    firstName: &#x27;Foo&#x27;,</span><br><span class="line">    lastName: &#x27;Bar&#x27;,</span><br><span class="line">    fullName: &#x27;Foo Bar&#x27;</span><br><span class="line">  &#125;,</span><br><span class="line">  watch: &#123;</span><br><span class="line">    firstName: function (val) &#123;</span><br><span class="line">      this.fullName = val + &#x27; &#x27; + this.lastName</span><br><span class="line">    &#125;,</span><br><span class="line">    lastName: function (val) &#123;</span><br><span class="line">      this.fullName = this.firstName + &#x27; &#x27; + val</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>栗子2：使用 watch 选项允许我们执行异步操作 (访问一个 API)，限制我们执行该操作的频率，并在我们得到最终结果前，设置中间状态。这些都是计算属性无法做到的。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;watch-example&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">    Ask a yes/no question:</span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">v-model</span>=<span class="string">&quot;question&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;&#123; answer &#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 因为 AJAX 库和通用工具的生态已经相当丰富，Vue 核心代码没有重复 --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 提供这些功能以保持精简。这也可以让你自由选择自己更熟悉的工具。 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">  <span class="keyword">var</span> watchExampleVM = <span class="keyword">new</span> <span class="title class_">Vue</span>(&#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="attr">el</span>: <span class="string">&#x27;#watch-example&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">    <span class="attr">data</span>: &#123;</span></span><br><span class="line"><span class="language-javascript">      <span class="attr">question</span>: <span class="string">&#x27;&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">      <span class="attr">answer</span>: <span class="string">&#x27;I cannot give you an answer until you ask a question!&#x27;</span></span></span><br><span class="line"><span class="language-javascript">    &#125;,</span></span><br><span class="line"><span class="language-javascript">    <span class="attr">watch</span>: &#123;</span></span><br><span class="line"><span class="language-javascript">      <span class="comment">// 如果 `question` 发生改变，这个函数就会运行</span></span></span><br><span class="line"><span class="language-javascript">      <span class="attr">question</span>: <span class="keyword">function</span> (<span class="params">newQuestion, oldQuestion</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">this</span>.<span class="property">answer</span> = <span class="string">&#x27;Waiting for you to stop typing...&#x27;</span></span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">this</span>.<span class="title function_">debouncedGetAnswer</span>()</span></span><br><span class="line"><span class="language-javascript">      &#125;</span></span><br><span class="line"><span class="language-javascript">    &#125;,</span></span><br><span class="line"><span class="language-javascript">    <span class="attr">created</span>: <span class="keyword">function</span> (<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">      <span class="comment">// `_.debounce` 是一个通过 Lodash 限制操作频率的函数。</span></span></span><br><span class="line"><span class="language-javascript">      <span class="comment">// 在这个例子中，我们希望限制访问 yesno.wtf/api 的频率</span></span></span><br><span class="line"><span class="language-javascript">      <span class="comment">// AJAX 请求直到用户输入完毕才会发出。想要了解更多关于</span></span></span><br><span class="line"><span class="language-javascript">      <span class="comment">// `_.debounce` 函数 (及其近亲 `_.throttle`) 的知识，</span></span></span><br><span class="line"><span class="language-javascript">      <span class="comment">// 请参考：https://lodash.com/docs#debounce</span></span></span><br><span class="line"><span class="language-javascript">      <span class="variable language_">this</span>.<span class="property">debouncedGetAnswer</span> = _.<span class="title function_">debounce</span>(<span class="variable language_">this</span>.<span class="property">getAnswer</span>, <span class="number">500</span>)</span></span><br><span class="line"><span class="language-javascript">    &#125;,</span></span><br><span class="line"><span class="language-javascript">    <span class="attr">methods</span>: &#123;</span></span><br><span class="line"><span class="language-javascript">      <span class="attr">getAnswer</span>: <span class="keyword">function</span> (<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">if</span> (<span class="variable language_">this</span>.<span class="property">question</span>.<span class="title function_">indexOf</span>(<span class="string">&#x27;?&#x27;</span>) === -<span class="number">1</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">          <span class="variable language_">this</span>.<span class="property">answer</span> = <span class="string">&#x27;Questions usually contain a question mark. ;-)&#x27;</span></span></span><br><span class="line"><span class="language-javascript">          <span class="keyword">return</span></span></span><br><span class="line"><span class="language-javascript">        &#125;</span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">this</span>.<span class="property">answer</span> = <span class="string">&#x27;Thinking...&#x27;</span></span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">var</span> vm = <span class="variable language_">this</span></span></span><br><span class="line"><span class="language-javascript">        axios.<span class="title function_">get</span>(<span class="string">&#x27;https://yesno.wtf/api&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript">          .<span class="title function_">then</span>(<span class="keyword">function</span> (<span class="params">response</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">            vm.<span class="property">answer</span> = _.<span class="title function_">capitalize</span>(response.<span class="property">data</span>.<span class="property">answer</span>)</span></span><br><span class="line"><span class="language-javascript">          &#125;)</span></span><br><span class="line"><span class="language-javascript">          .<span class="title function_">catch</span>(<span class="keyword">function</span> (<span class="params">error</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">            vm.<span class="property">answer</span> = <span class="string">&#x27;Error! Could not reach the API. &#x27;</span> + error</span></span><br><span class="line"><span class="language-javascript">          &#125;)</span></span><br><span class="line"><span class="language-javascript">      &#125;</span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript">  &#125;)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="指令">指令</h3>
+<p>指令 (Directives) 是带有 v- 前缀的特殊 attribute。指令 attribute 的值预期是<strong>单个 JavaScript 表达式</strong> (v-for 例外)。当表达式的值改变时，指令将其产生的连带影响，响应式地作用于 DOM。</p>
+<p>如下，<code>v-if</code>根据表达式<code>seen</code>值的真假来插入or移除<code>&lt;p&gt;</code>元素：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">v-if</span>=<span class="string">&quot;seen&quot;</span>&gt;</span>现在你看到我了<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>指令分类and栗子：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 4.指令：内容指令，渲染指令，属性指令 --&gt;</span></span><br><span class="line"> <span class="comment">&lt;!-- 内容指令 --&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">p</span> <span class="attr">v-text</span>=<span class="string">&quot;htmlContent&quot;</span>&gt;</span>123<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">p</span> <span class="attr">v-html</span>=<span class="string">&quot;htmlContent&quot;</span>&gt;</span>123<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line"> <span class="comment">&lt;!-- 渲染指令 --&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">p</span> <span class="attr">v-for</span>=<span class="string">&quot;item in 5&quot;</span>&gt;</span>这是内容<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">p</span> <span class="attr">v-for</span>=<span class="string">&quot;(item, key, index) in obj&quot;</span>&gt;</span>这是内容：&#123;&#123; item &#125;&#125;&#123;&#123; key &#125;&#125;&#123;&#123; index &#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span>  在循环中会产生索引&gt;</span><br><span class="line"> <span class="tag">&lt;<span class="name">p</span> <span class="attr">v-for</span>=<span class="string">&quot;(item, key, index) in arr&quot;</span>&gt;</span>这是内容：&#123;&#123; item &#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">p</span> <span class="attr">v-if</span>=<span class="string">&quot;bool&quot;</span>&gt;</span>标签内容<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">p</span> <span class="attr">v-show</span>=<span class="string">&quot;bool&quot;</span>&gt;</span>标签内容<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line"> <span class="comment">&lt;!-- 属性指令 --&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">p</span> <span class="attr">v-bind:title</span>=<span class="string">&quot;title&quot;</span>&gt;</span>这是内容<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">p</span> <span class="attr">:title</span>=<span class="string">&quot;title&quot;</span>&gt;</span>这是内容<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line"> <span class="comment">&lt;!-- 事件指令 --&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">button</span> <span class="attr">v-on:click</span>=<span class="string">&quot;output&quot;</span>&gt;</span>点击<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;output&quot;</span>&gt;</span>点击<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"></span><br><span class="line"> <span class="comment">&lt;!-- 表单指令 : v-model 可以实现双向数据绑定--&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">input</span> <span class="attr">v-model</span>=<span class="string">&quot;inputValue&quot;</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">p</span> <span class="attr">v-text</span>=<span class="string">&quot;inputValue&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="修饰符">修饰符</h3>
+<p>修饰符 (modifier) 是以半角句号 . 指明的特殊后缀，用于指出一个指令应该以特殊方式绑定。例如，.prevent 修饰符告诉 v-on 指令对于触发的事件调用 event.preventDefault()：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;form v-on:submit.prevent=&quot;onSubmit&quot;&gt;...&lt;/form&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>缩写</strong>：</p>
+<p>Vue 为 v-bind 和 v-on 这两个最常用的指令，提供了特定简写：</p>
+<p>v-bind：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 完整语法 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">v-bind:href</span>=<span class="string">&quot;url&quot;</span>&gt;</span>...<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 缩写 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">:href</span>=<span class="string">&quot;url&quot;</span>&gt;</span>...<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 动态参数的缩写 (2.6.0+) --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">:</span>[<span class="attr">key</span>]=<span class="string">&quot;url&quot;</span>&gt;</span> ... <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>v-on：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 完整语法 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">v-on:click</span>=<span class="string">&quot;doSomething&quot;</span>&gt;</span>...<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 缩写 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> @<span class="attr">click</span>=<span class="string">&quot;doSomething&quot;</span>&gt;</span>...<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 动态参数的缩写 (2.6.0+) --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> @[<span class="attr">event</span>]=<span class="string">&quot;doSomething&quot;</span>&gt;</span> ... <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="3-组件">3. 组件</h2>
+<p>所有的 Vue 组件都是 Vue 实例，并且接受相同的选项对象 (一些根实例特有的选项除外)。</p>
+]]></content>
+      <categories>
+        <category>Coding</category>
+        <category>Vue</category>
+      </categories>
+      <tags>
+        <tag>Vue</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Wetab</title>
+    <url>/post/32e2265d.html</url>
+    <content><![CDATA[<blockquote>
+<p>Wetab笔记，给你更好的笔记体验</p>
+<p>这里是<a href="https://www.wetab.link">Wetab新标签官网</a> (右键点击打开链接)</p>
+</blockquote>
+<p>以下特性可以为你的笔记带来非常棒的体验：</p>
+<ul>
+<li>
+<p>[x] 📝 <strong>所见即所得的 Markdown</strong> - 以一种优雅的方式编写 markdown</p>
+</li>
+<li>
+<p>[x] 👍 <strong>Emoji</strong> - 支持 emoji 快捷指令和选择器</p>
+</li>
+<li>
+<p>[x] 💾 <strong>剪贴板</strong> - 支持 markdown 格式的复制粘贴</p>
+</li>
+<li>
+<p>[x] ⌨️ <strong>换行模式</strong> - 你可以使用“Enter”和“Shift + Enter”两种方式进行换行</p>
+</li>
+<li>
+<p>[x] ⚡ <strong>斜线指令</strong> - 在空白处输入状态下通过“/”可以完成丰富的输入指令</p>
+</li>
+<li>
+<p>[x] 🧮 <strong>数学支持</strong> - 你可以完成数学公式的描写</p>
+</li>
+<li>
+<p>[x] 📊 <strong>表格支持</strong> - 拥有流畅的 ui 的表格支持</p>
+</li>
+<li>
+<p>[x] 📰 <strong>图表支持</strong> - 基于<a href="https://mermaid-js.github.io/mermaid/#/">mermaid</a>的图表支持</p>
+</li>
+</ul>
+<hr>
+<p>你可以添加行内代码例如 <code>inline code</code> 和代码块：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">main</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">info</span>(<span class="string">&quot;Hello world!&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Tips: 使用<code>Mod-Enter</code>来退出块级元素，例如代码块。</p>
+</blockquote>
+<hr>
+<p>你可以输入<code>||</code>和一个空格来创建表格：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">表头 1</th>
+<th style="text-align:center">表头 2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">内容 1</td>
+<td style="text-align:center"><s>内容 1</s></td>
+</tr>
+<tr>
+<td style="text-align:left">内容 2</td>
+<td style="text-align:center"><strong>内容</strong> 2</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p>数学公式通过 <a href="https://en.wikipedia.org/wiki/TeX">TeX 表达式</a>支持。</p>
+<p>这里我们有行内公式： $E = mc^2$，你可以点击并编辑它。</p>
+<p>数学公式块也是支持的。</p>
+<p>$$<br>
+\begin{aligned}<br>
+T( (v_1 + v_2) \otimes w) &amp;= T(v_1 \otimes w) + T(v_2 \otimes w) \<br>
+T( v \otimes (w_1 + w_2)) &amp;= T(v \otimes w_1) + T(v \otimes w_2) \<br>
+T( (\alpha v) \otimes w ) &amp;= T( \alpha ( v \otimes w) ) \<br>
+T( v \otimes (\alpha w) ) &amp;= T( \alpha ( v \otimes w) ) \<br>
+\end{aligned}<br>
+$$</p>
+<p>你可以输入<code>$$</code>和一个空格来创建数学公式块。</p>
+<hr>
+<p>使用 <a href="https://www.webfx.com/tools/emoji-cheat-sheet/">emoji 快捷指令</a> 例如 <code>:+1:</code> 来添加 emoji.</p>
+<p>在输入时，你也许注意到了 emoji 过滤器，尝试输入<code>:baby</code>来查看它。</p>
+<hr>
+<p>你可以输入 <code>```mermaid</code> 来添加图表。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">graph TD;</span><br><span class="line">    EditorState--&gt;EditorView;</span><br><span class="line">    EditorView--&gt;DOMEvent;</span><br><span class="line">    DOMEvent--&gt;Transaction;</span><br><span class="line">    Transaction--&gt;EditorState;</span><br></pre></td></tr></table></figure>
+<hr>
+<p>Wetab笔记基于 <a href="https://milkdown.dev/">Milkdown</a> 完成</p>
+]]></content>
+      <tags>
+        <tag>Markdown</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Ubuntu(wsl)安装Redis并搭建集群</title>
+    <url>/post/ac35e331.html</url>
+    <content><![CDATA[<h2 id="Ubuntu（wsl）安装Redis并搭建集群">Ubuntu（wsl）安装Redis并搭建集群</h2>
+<h3 id="起因">起因</h3>
+<p>配置Redis集群，Windows本机已经有了Redis，就想在wsl中装Redis集群。</p>
+<h3 id="踩坑历程">踩坑历程</h3>
+<ol>
+<li>还就那个经典的：</li>
+</ol>
+<p>启动wsl时报错 <code>占位程序接收到错误数据。 Error code: Wsl/Service/0x800706f7</code>。行吧，不连梯子上不去网站，连上梯子就总有幺蛾子。解决办法：终端管理员权限运行<code>netsh winsock reset</code>，或者使用<code>NoLSP.exe</code>启动wsl。</p>
+<ol start="2">
+<li>Redis 安装：</li>
+</ol>
+<p>从<a href="http://download.redis.io/releases/">redis发行网站</a>上下载最新版本的<code>redis-7.2.0.tar.gz</code>，解压，cd到目录下，<code>make</code>构建。</p>
+<p>来力：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">(.<span class="property">venv</span>) vagrant@<span class="attr">vagrant</span>:<span class="regexp">/vagrant/</span>redis-<span class="number">6.0</span><span class="number">.6</span>$ make</span><br><span class="line">cd src &amp;&amp; make all</span><br><span class="line">make[<span class="number">1</span>]: <span class="title class_">Entering</span> directory <span class="string">&#x27;/vagrant/redis-6.0.6/src&#x27;</span></span><br><span class="line">/bin/<span class="attr">sh</span>: <span class="number">1</span>: pkg-<span class="attr">config</span>: not found</span><br><span class="line">    <span class="variable constant_">CC</span> <span class="title class_">Makefile</span>.<span class="property">dep</span></span><br><span class="line">/bin/<span class="attr">sh</span>: <span class="number">1</span>: pkg-<span class="attr">config</span>: not found</span><br><span class="line">make[<span class="number">1</span>]: <span class="title class_">Warning</span>: <span class="title class_">File</span> <span class="string">&#x27;Makefile.dep&#x27;</span> has modification time <span class="number">1.3</span> s <span class="keyword">in</span> the future</span><br><span class="line">    <span class="variable constant_">CC</span> adlist.<span class="property">o</span></span><br><span class="line">/bin/<span class="attr">sh</span>: <span class="number">1</span>: <span class="attr">cc</span>: not found</span><br><span class="line"><span class="title class_">Makefile</span>:<span class="number">315</span>: recipe <span class="keyword">for</span> target <span class="string">&#x27;adlist.o&#x27;</span> failed</span><br><span class="line">make[<span class="number">1</span>]: *** [adlist.<span class="property">o</span>] <span class="title class_">Error</span> <span class="number">127</span></span><br><span class="line">make[<span class="number">1</span>]: <span class="title class_">Leaving</span> directory <span class="string">&#x27;/vagrant/redis-6.0.6/src&#x27;</span></span><br><span class="line"><span class="title class_">Makefile</span>:<span class="number">6</span>: recipe <span class="keyword">for</span> target <span class="string">&#x27;all&#x27;</span> failed</span><br><span class="line"><span class="attr">make</span>: *** [all] <span class="title class_">Error</span> <span class="number">2</span></span><br></pre></td></tr></table></figure>
+<p>解决办法：</p>
+<ul>
+<li>少了<code>pkg-config</code>，安装之，顺便安装了<code>gcc</code>和<code>tcl</code>（没有<code>tcl</code>在 <code>make test</code>时会报错）。</li>
+<li>安装<code>gcc</code>和<code>tcl</code>时会出现：<code>/sbin/ldconfig.real: /usr/lib/wsl/lib/libcuda.so.1 is not a symbolic link</code>这个问题，可<a href="https://github.com/microsoft/WSL/issues/5663">参考链接</a>（目前未深究……）。</li>
+<li>然后删除解压出来的 redis 文件夹，重新解压再重新 make 。大成功。参考：<a href="https://stackoverflow.com/questions/63611270/redis-make-failing-ubuntu-18-04">ubuntu(wsl)安装redis时make报错</a></li>
+</ul>
+<p><img src="/post/ac35e331/Redis%E5%AE%89%E8%A3%85.jpg" alt="img"></p>
+<ol start="3">
+<li>Redis集群设置</li>
+</ol>
+<p>搭建三个节点，对应端口分别是7000,7001,7002。配置如下：<a href="https://blog.hhui.top/hexblog/2019/09/25/190925-Redis%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA%E6%89%8B%E5%86%8C/">Redis集群搭建手册</a></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">mkdir -p data/7000 data/7001 data/7002 log/7000 log/7001 log/7002 </span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">下面的配置，一次操作三遍，分别获得r7000.conf r7001.conf r7002.conf</span></span><br><span class="line">cp redis.conf r7000.conf</span><br><span class="line">vim r7000.conf</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># 下面是我们需要修改的地方</span></span></span><br><span class="line">port 7000 # 端口号</span><br><span class="line">pidfile /var/run/redis_7000.pid # pid进程文件</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">日志和数据存储路径</span></span><br><span class="line">logfile &quot;/home/yihui/redis/log/7000/redis.log&quot;</span><br><span class="line">dir &quot;/home/yihui/redis/data/7000/&quot;</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">后台启动</span></span><br><span class="line">daemonize yes</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">开启集群</span></span><br><span class="line">cluster-enabled yes</span><br></pre></td></tr></table></figure>
+<p>启动Redis，设置集群，集群至少需要三主节点，设置主从时最少要六个节点，不是很有必要啊，直接不要从节点了：</p>
+<p><img src="/post/ac35e331/Redis%E9%9B%86%E7%BE%A4%E8%AE%BE%E7%BD%AE.jpg" alt="img"></p>
+<p>最后用<code>redis-cli</code>测试一下：</p>
+<p><img src="/post/ac35e331/Redis%E9%9B%86%E7%BE%A4%E6%B5%8B%E8%AF%95.jpg" alt="img"></p>
+<h3 id="番外">番外</h3>
+<p>关于<code>hexo</code>中图片显示问题，<a href="https://blog.csdn.net/m0_43401436/article/details/107191688">这里</a>讲得很清楚，csdn 中难得的好文了。</p>
+]]></content>
+      <categories>
+        <category>Coding</category>
+      </categories>
+      <tags>
+        <tag>Ubuntu</tag>
+        <tag>wsl</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>代码随想录之哈希表</title>
     <url>/post/89e159ee.html</url>
     <content><![CDATA[<h2 id="哈希表">哈希表</h2>
 <h3 id="哈希表-2">哈希表</h3>
+<p>什么是哈希表（Hash Table）？</p>
+<blockquote>
+<p>哈希表是根据关键码的值而直接进行访问的数据结构。</p>
+</blockquote>
+<p>哈希表能解决什么问题？</p>
+<blockquote>
+<p>一般可以<strong>用来快速判断一个元素是否出现在集合中。</strong></p>
+</blockquote>
+<p>哈希表如何产生？例如查询一个名字是否在这所学校中？</p>
+<blockquote>
+<p>哈希函数进行映射。</p>
+</blockquote>
 <h3 id="哈希函数">哈希函数</h3>
+<p>哈希函数，把学生的姓名直接映射为哈希表上的索引，然后就可以通过查询索引下标快速知道这位同学是否在这所学校里了。</p>
+<p>哈希函数如下图所示，通过 hashCode 把名字转化为数值，一般 hashcode 是通过特定编码方式，可以将其他数据格式转化为不同的数值，这样就把学生名字映射为哈希表上的索引数字了。</p>
+<p><img src="/post/89e159ee/%E5%93%88%E5%B8%8C%E5%87%BD%E6%95%B0.png" alt="哈希函数"></p>
+<p>当hashCode得到的数值大于哈希表的大小，即tableSize，对得到的数值进行<strong>取模</strong>操作之后，数值一定就能放入表中。然而，表的大小是有限的，当要映射的数量大于表的大小，必然会出现<strong>不同的数据映射到同一个位置的情况</strong>，此时即出现了<strong>哈希碰撞</strong>。</p>
+<p><img src="/post/89e159ee/%E5%93%88%E5%B8%8C%E7%A2%B0%E6%92%9E.png" alt="哈希碰撞"></p>
+<p>如何解决哈希碰撞？</p>
+<ul>
+<li>拉链法——在发生冲突的位置上将冲突的元素排成一个链表。要查找此处的某个元素，先找到下标，再从链表中查找具体值。</li>
+<li>线性探测法——当表大于数据量时，发生哈希碰撞，在冲突的位置后面寻找一个空着的位置存放此元素。</li>
+</ul>
 <h3 id="三种哈希结构">三种哈希结构</h3>
+<ul>
+<li>数组</li>
+<li>set（集合）</li>
+<li>map（映射）</li>
+</ul>
 <h3 id="小结">小结</h3>
+<p>总结一下，<strong>当我们遇到了要快速判断一个元素是否出现集合里的时候，就要考虑哈希法</strong>。</p>
+<p>哈希法是牺牲空间换取时间的方法，因为使用了额外的空间来存放数据。</p>
 <h2 id="有效的字母异位词">有效的字母异位词</h2>
 <blockquote>
 <p>即判断两个字符串是相同的字母组成。如：abbc, bbac。</p>
@@ -671,6 +778,67 @@ $$</p>
       </tags>
   </entry>
   <entry>
+    <title>代码随想录之字符串</title>
+    <url>/post/f06f8293.html</url>
+    <content><![CDATA[<h1>代码随想录之字符串</h1>
+<blockquote>
+<p><strong>打基础的时候，不要太依赖库函数！</strong></p>
+</blockquote>
+<h2 id="反转字符串">反转字符串</h2>
+<blockquote>
+<p><a href="https://leetcode.cn/problems/reverse-string/">力扣题目链接(opens new window)</a></p>
+<p>编写一个函数，其作用是将输入的字符串反转过来。输入字符串以字符数组 char[] 的形式给出。</p>
+<p>不要给另外的数组分配额外的空间，你必须原地修改输入数组、使用 O(1) 的额外空间解决这一问题。</p>
+<p>你可以假设数组中的所有字符都是 ASCII 码表中的可打印字符。</p>
+<p>示例 1：<br>
+输入：[“h”,“e”,“l”,“l”,“o”]<br>
+输出：[“o”,“l”,“l”,“e”,“h”]</p>
+<p>示例 2：<br>
+输入：[“H”,“a”,“n”,“n”,“a”,“h”]<br>
+输出：[“h”,“a”,“n”,“n”,“a”,“H”]</p>
+</blockquote>
+<p><strong>思路</strong>：</p>
+<p>双指针，分别从字符串的开始位置<code>i</code>和结束位置<code>j</code>同时开始向中间移动，并交换元素。循环终止条件是指针位置相同。</p>
+<p><strong>代码</strong>：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">reverseString</span><span class="params">(<span class="type">char</span>[] s)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">l</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">r</span> <span class="operator">=</span> s.length - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (l &lt; r) &#123;</span><br><span class="line">            s[l] ^= s[r];  <span class="comment">//构造 a ^ b 的结果，并放在 a 中</span></span><br><span class="line">            s[r] ^= s[l];  <span class="comment">//将 a ^ b 这一结果再 ^ b ，存入b中，此时 b = a, a = a ^ b</span></span><br><span class="line">            s[l] ^= s[r];  <span class="comment">//a ^ b 的结果再 ^ a ，存入 a 中，此时 b = a, a = b 完成交换</span></span><br><span class="line">            l++;</span><br><span class="line">            r--;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 第二种方法用temp来交换数值更多人容易理解些</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">reverseString</span><span class="params">(<span class="type">char</span>[] s)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">l</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">r</span> <span class="operator">=</span> s.length - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span>(l &lt; r)&#123;</span><br><span class="line">            <span class="type">char</span> <span class="variable">temp</span> <span class="operator">=</span> s[l];</span><br><span class="line">            s[l] = s[r];</span><br><span class="line">            s[r] = temp;</span><br><span class="line">            l++;</span><br><span class="line">            r--;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>时间复杂度：O(n)</li>
+<li>空间复杂度：O(1)</li>
+</ul>
+<h2 id="反转字符串Ⅱ">反转字符串Ⅱ</h2>
+<blockquote>
+<p><a href="https://leetcode.cn/problems/reverse-string-ii/">力扣题目链接(opens new window)</a></p>
+<p>给定一个字符串 s 和一个整数 k，从字符串开头算起, 每计数至 2k 个字符，就反转这 2k 个字符中的前 k 个字符。</p>
+<p>如果剩余字符少于 k 个，则将剩余字符全部反转。</p>
+<p>如果剩余字符小于 2k 但大于或等于 k 个，则反转前 k 个字符，其余字符保持原样。</p>
+<p>示例:</p>
+<p>输入: s = “abcdefg”, k = 2<br>
+输出: “bacdfeg”</p>
+</blockquote>
+<p><strong>思路</strong>：</p>
+<p>模拟，实现题目中的反转规则。</p>
+<p>在遍历字符串的过程中，只要让 i += (2 * k)，i 每次移动 2 * k 就可以了，然后判断是否需要有反转的区间。</p>
+<p>因为要找的也就是每2 * k 区间的起点，这样写，程序会高效很多。</p>
+<p><strong>所以当需要固定规律一段一段去处理字符串的时候，要想想在在for循环的表达式上做做文章。</strong></p>
+<p><strong>代码</strong>：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//解法一</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">reverseStr</span><span class="params">(String s, <span class="type">int</span> k)</span> &#123;</span><br><span class="line">        <span class="type">StringBuffer</span> <span class="variable">res</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuffer</span>();</span><br><span class="line">        <span class="type">int</span> <span class="variable">length</span> <span class="operator">=</span> s.length();</span><br><span class="line">        <span class="type">int</span> <span class="variable">start</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (start &lt; length) &#123;</span><br><span class="line">            <span class="comment">// 找到k处和2k处</span></span><br><span class="line">            <span class="type">StringBuffer</span> <span class="variable">temp</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuffer</span>();</span><br><span class="line">            <span class="comment">// 与length进行判断，如果大于length了，那就将其置为length</span></span><br><span class="line">            <span class="type">int</span> <span class="variable">firstK</span> <span class="operator">=</span> (start + k &gt; length) ? length : start + k;</span><br><span class="line">            <span class="type">int</span> <span class="variable">secondK</span> <span class="operator">=</span> (start + (<span class="number">2</span> * k) &gt; length) ? length : start + (<span class="number">2</span> * k);</span><br><span class="line"></span><br><span class="line">            <span class="comment">//无论start所处位置，至少会反转一次</span></span><br><span class="line">            temp.append(s.substring(start, firstK));</span><br><span class="line">            res.append(temp.reverse());</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 如果firstK到secondK之间有元素，这些元素直接放入res里即可。</span></span><br><span class="line">            <span class="keyword">if</span> (firstK &lt; secondK) &#123; <span class="comment">//此时剩余长度一定大于k。</span></span><br><span class="line">                res.append(s.substring(firstK, secondK));</span><br><span class="line">            &#125;</span><br><span class="line">            start += (<span class="number">2</span> * k);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res.toString();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//解法二（似乎更容易理解点）</span></span><br><span class="line"><span class="comment">//题目的意思其实概括为 每隔2k个反转前k个，尾数不够k个时候全部反转</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">reverseStr</span><span class="params">(String s, <span class="type">int</span> k)</span> &#123;</span><br><span class="line">        <span class="type">char</span>[] ch = s.toCharArray();</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; ch.length; i += <span class="number">2</span> * k)&#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">start</span> <span class="operator">=</span> i;</span><br><span class="line">            <span class="comment">//这里是判断尾数够不够k个来取决end指针的位置</span></span><br><span class="line">            <span class="type">int</span> <span class="variable">end</span> <span class="operator">=</span> Math.min(ch.length - <span class="number">1</span>, start + k - <span class="number">1</span>);</span><br><span class="line">            <span class="comment">//用异或运算反转 </span></span><br><span class="line">            <span class="keyword">while</span>(start &lt; end)&#123;</span><br><span class="line">                ch[start] ^= ch[end];</span><br><span class="line">                ch[end] ^= ch[start];</span><br><span class="line">                ch[start] ^= ch[end];</span><br><span class="line">                start++;</span><br><span class="line">                end--;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">String</span>(ch);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 解法二还可以用temp来交换数值，会的人更多些</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">reverseStr</span><span class="params">(String s, <span class="type">int</span> k)</span> &#123;</span><br><span class="line">        <span class="type">char</span>[] ch = s.toCharArray();</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>;i &lt; ch.length;i += <span class="number">2</span> * k)&#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">start</span> <span class="operator">=</span> i;</span><br><span class="line">            <span class="comment">// 判断尾数够不够k个来取决end指针的位置</span></span><br><span class="line">            <span class="type">int</span> <span class="variable">end</span> <span class="operator">=</span> Math.min(ch.length - <span class="number">1</span>,start + k - <span class="number">1</span>);</span><br><span class="line">            <span class="keyword">while</span>(start &lt; end)&#123;</span><br><span class="line">                </span><br><span class="line">                <span class="type">char</span> <span class="variable">temp</span> <span class="operator">=</span> ch[start];</span><br><span class="line">                ch[start] = ch[end];</span><br><span class="line">                ch[end] = temp;</span><br><span class="line"></span><br><span class="line">                start++;</span><br><span class="line">                end--;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">String</span>(ch);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 解法3</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">reverseStr</span><span class="params">(String s, <span class="type">int</span> k)</span> &#123;</span><br><span class="line">        <span class="type">char</span>[] ch = s.toCharArray();</span><br><span class="line">        <span class="comment">// 1. 每隔 2k 个字符的前 k 个字符进行反转</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i&lt; ch.length; i += <span class="number">2</span> * k) &#123;</span><br><span class="line">            <span class="comment">// 2. 剩余字符小于 2k 但大于或等于 k 个，则反转前 k 个字符</span></span><br><span class="line">            <span class="keyword">if</span> (i + k &lt;= ch.length) &#123;</span><br><span class="line">                reverse(ch, i, i + k -<span class="number">1</span>);</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// 3. 剩余字符少于 k 个，则将剩余字符全部反转</span></span><br><span class="line">            reverse(ch, i, ch.length - <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span>  <span class="keyword">new</span> <span class="title class_">String</span>(ch);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 定义翻转函数</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">reverse</span><span class="params">(<span class="type">char</span>[] ch, <span class="type">int</span> i, <span class="type">int</span> j)</span> &#123;</span><br><span class="line">    <span class="keyword">for</span> (; i &lt; j; i++, j--) &#123;</span><br><span class="line">        <span class="type">char</span> <span class="variable">temp</span>  <span class="operator">=</span> ch[i];</span><br><span class="line">        ch[i] = ch[j];</span><br><span class="line">        ch[j] = temp;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="替换空格">替换空格</h2>
+<h2 id="翻转字符串里的单词">翻转字符串里的单词</h2>
+<h2 id="左旋转字符串">左旋转字符串</h2>
+<h2 id="实现-strStr">实现 strStr()</h2>
+<h2 id="重复的子字符串">重复的子字符串</h2>
+<h2 id="小结">小结</h2>
+]]></content>
+      <categories>
+        <category>Coding</category>
+        <category>代码随想录</category>
+      </categories>
+      <tags>
+        <tag>刷题笔记</tag>
+        <tag>代码随想录</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>携程笔试记录</title>
     <url>/post/6f158289.html</url>
     <content><![CDATA[<h2 id="9-21-携程笔试（第二批）记录">9.21 携程笔试（第二批）记录</h2>
@@ -780,35 +948,6 @@ return dp[num][m];<br>
       </categories>
       <tags>
         <tag>记录</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>离人</title>
-    <url>/post/14e24de8.html</url>
-    <content><![CDATA[<h2 id="1">1</h2>
-<p>不懂事的老小孩，家里人都不关注的笨蛋，忘了给自家孙子上户口的生产队队长，拿自己儿子名字贷款给队里的工程的老不修，“人穷水都穷”连个孙娃子都收拾不干净的老头——以上，就是多年以后还留在我脑海中关于爷爷的全部印象了。</p>
-<p>还记得那个三年级的午后，外婆来学校接我，说带我去看爷爷，我懵懵懂懂地跟着去了，看完了，懵懵懂懂地走了，哦，原来是爷爷帮人插秧的时候晕倒了，没抢救回来，于是，我很自然的接受了这样一个事实——爷爷死了，那个编了一天的竹篾拿去换点钱给小孙子买饮料的老头死了。</p>
-<p>因为家庭的原因，我从很小的时候就一直是跟着外公外婆家一起生活的，对于这个爷爷，了解也就十分有限。倒不如说，关于他的很多事，很多印象，全是从外公外婆和爸妈口中听来，最后自行拼接而成的。每逢过年，都是必须要要去上坟的，在这个时候，听一听爸妈讲讲他过去的事，听一听爸妈给他讲他走之后他儿孙的事，再祈愿老人家在天之灵给现世的人保佑，在香蜡钱纸燃烧的火光中、在噼里啪啦的鞭炮声中，代际间的传承就就以这样的形式完成了。</p>
-<h2 id="2">2</h2>
-<p>年龄和脾气之间肯定是有一定关系的，无他，从我自己的经验来看就是这样，从我身边的人变化来看也是这样。</p>
-<p>小学的时候吧，我的邻居家有个年龄很大的老太太，她家养了一条老母狗，很凶，真的很凶，每天我去上学从他家门口经过都心惊肉跳，走的次数多了，最后还是没躲过被咬了一回，因此，我对老太太印象也非常不好。</p>
-<p>那一年，老太太家的枇杷树结果了，很多很大，我很馋，馋但是不敢。后来，老太太叫我自己上树去摘就是了，小孩子哪能受得了鼓励，坐在树上就开始一顿吃。外公刚干完活回来，见我坐在邻居家的枇杷树上大吃，很生气地叫我下来，我没理他，没想到竟然扔小石子过来，于是，我大哭着回家了。外婆回来，知道了情况，抄起二指宽的篾条就朝外公身上打去，一边打一遍骂，“哪有你这样教育娃娃的，那是拿石头打的吗，不晓得轻重，你看我今天打不打得你好看”。</p>
-<p>暴躁，不知轻重，大概就是那时候外公的脾气了。</p>
-<p>上高中了，我运气好，在同学的推荐下得到了市高中的青睐，分数上线就要，免学杂费。当时也没有月假一说，法定假期中时间长点的才能回家，于是，回家的次数就这样变少了。奇怪的是，我跟外公这个老头的关系倒是莫名其妙好了很多，好像几天不见这个人就褪去了往日的暴躁，转身拥抱了相反的平和。家里的打米机不好用了，一看是筛子坏了，行，你小子去街上买一张回来吧；今天要抽水去灌那片花生地，走吧，咱爷俩一块把水管和水泵扛过去；读了几天书手脚也没变慢嘛，还阔以，今天就把这片谷子打完了；“人民渠嘛，还是我切修的，当时毛老汉……”；“嗯，东西拿齐没得，武汉也没得好远嘛，当年我也是切过那边了，你切了好生学习哈，上大学了也不是给你放松的，嗯，屋头我晓得，你走嘛”……</p>
-<p>平和，宁静，像一坛老酒，这是那时候外公的脾气。</p>
-<h2 id="3">3</h2>
-<p>一晃又是几年，好似我从未认真看过外公这个老头一样，他怎么一下子这么瘦弱了，弯腰驼背的了，眼神没有往日的犀利，嘴角却含着似有若无的笑意，像村里那口老井，记录了一切但是又将其深深埋在水底，几无人可触达。</p>
-<p>前不久爸打电话给我，告诉我外公确诊了胃癌，叫我给家里打个电话好歹问一下，但是我一直不敢往家里打电话，我在害怕，在逃避，害怕自己辜负他们的期待，害怕看见他们的眼神，害怕听见他们的声音，我在逃避自己的责任，但是我又还能再躲多久呢？</p>
-<p>曾经我对皮包骨头这个词的印象只停留在字典里，直到我再见到我的外公，那是怎样的一副光景？曾经力担千斤的肌肉再没有一丝一毫留存在这个老人身上，肋骨勾勒出的胸膛就这样毫无遮掩地展现着，同弯曲的脊梁骨一起狰狞地展示着时间的伟力，展示着“病”这一人世间大苦楚的威力，眉头轻蹙的样子像是在忍受着无时无刻不在的痛楚，我简直不忍再看。面对着这一切，我无话可说，我无能为力，世上难道还有什么东西能再换回这个老人的时光吗？</p>
-<p>树欲静而风不止，子欲养而亲不待。初闻不识曲中意，再听已是曲中人。罢，珍惜眼前人吧。</p>
-<h2 id="end">end</h2>
-<p>“真没想到我们在这样一个地方告别，但是跟人告别的时候，还是要用力一点，因为你多说一句，说不定就是最后一句，多看一眼，弄不好就是最后一眼。”——《后会无期》</p>
-]]></content>
-      <categories>
-        <category>Life</category>
-      </categories>
-      <tags>
-        <tag>随想</tag>
       </tags>
   </entry>
   <entry>
@@ -934,6 +1073,328 @@ return dp[num][m];<br>
       </categories>
       <tags>
         <tag>web</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>重修之Java基础</title>
+    <url>/post/37c82b62.html</url>
+    <content><![CDATA[<h2 id="重修之Java基础">重修之Java基础</h2>
+<blockquote>
+<p>参考：<a href="https://javaguide.cn/java/basis/j">JavaGuide</a></p>
+</blockquote>
+<h3 id="概念性的东西">概念性的东西</h3>
+<ol>
+<li>JVM &amp; JDK &amp; JRE</li>
+</ol>
+<p><img src="/post/37c82b62/JVM&amp;JDK&amp;JRE.png" alt="JVM&amp;JDK&amp;JRE"></p>
+<p>JVM大致结构模型：</p>
+<p><img src="/post/37c82b62/JVMModel.png" alt="JVMModel"></p>
+<ol>
+<li>字节码，字节码的好处</li>
+</ol>
+<p>JVM 可以理解的代码就叫做字节码（即扩展名为 .class 的文件），它不面向任何特定的处理器，<strong>只面向虚拟机</strong>。</p>
+<ol start="2">
+<li>Java编译与解释并存？</li>
+</ol>
+<p>Java 程序要经过先编译，后解释两个步骤，由 Java 编写的程序需要先经过编译步骤，生成字节码（.class 文件），这种字节码必须由 Java 解释器来解释执行。</p>
+<ol start="3">
+<li>JIT和AOT编译</li>
+</ol>
+<p>AOT（Ahead of Time Compilation）：适合云原生、微服务架构支持，缺少Java动态特性如反射、动态代理、动态加载、JNI（Java native Interface）。<br>
+JIT（Just In Time）：</p>
+<p>![AOT vs JIT](AOT vs JIT.png)</p>
+<p>参考：<a href="https://cn.dubbo.apache.org/zh-cn/blog/2023/06/28/%E8%B5%B0%E5%90%91-native-%E5%8C%96springdubbo-aot-%E6%8A%80%E6%9C%AF%E7%A4%BA%E4%BE%8B%E4%B8%8E%E5%8E%9F%E7%90%86%E8%AE%B2%E8%A7%A3/">走向 Native 化：Spring&amp;Dubbo AOT 技术示例与原理讲解</a>、<a href="https://mp.weixin.qq.com/s/4haTyXUmh8m-dBQaEzwDJw">基于静态编译构建微服务应用</a></p>
+<ol start="4">
+<li>Oracle JDK vs OpenJDK</li>
+</ol>
+<p>区别：</p>
+<p>补充——Oracle JDK vs OpenJDK带来的开源协议：</p>
+<ul>
+<li>BCL 协议（Oracle Binary Code License Agreement）：可以使用 JDK（支持商用），但是不能进行修改。</li>
+<li>OTN 协议（Oracle Technology Network License Agreement）：11 及之后新发布的 JDK 用的都是这个协议，可以自己私下用，但是商用需要付费。</li>
+</ul>
+<ol start="5">
+<li>Java和C++的区别</li>
+</ol>
+<ul>
+<li>Java 不提供指针来直接访问内存，程序内存更加安全</li>
+<li>Java 的类是单继承的，C++ 支持多重继承；虽然 Java 的类不可以多继承，但是接口可以多继承。</li>
+<li>Java 有自动内存管理垃圾回收机制(GC)，不需要程序员手动释放无用内存。</li>
+<li>C ++同时支持方法重载和操作符重载，但是 Java 只支持方法重载（操作符重载增加了复杂性，这与 Java 最初的设计思想不符）。</li>
+</ul>
+<h3 id="语法">语法</h3>
+<ol>
+<li>注释（单行、多行、文档）</li>
+<li>标识符&amp;关键字</li>
+<li>自增&amp;自减</li>
+</ol>
+<p>符号在前就先加/减，符号在后就后加/减。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="variable">b</span> <span class="operator">=</span> <span class="number">10</span>, c = <span class="number">20</span>;</span><br><span class="line">a = b++; <span class="comment">// a: 10, b: 11</span></span><br><span class="line">a = ++c; <span class="comment">// a: 21, c:21</span></span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>移位运算：</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="type">int</span> <span class="title function_">hash</span><span class="params">(Object key)</span> &#123;</span><br><span class="line">    <span class="type">int</span> h;</span><br><span class="line">    <span class="comment">// key.hashCode()：返回散列值也就是hashcode</span></span><br><span class="line">    <span class="comment">// ^：按位异或</span></span><br><span class="line">    <span class="comment">// &gt;&gt;&gt;:无符号右移，忽略符号位，空位都以0补齐</span></span><br><span class="line">    <span class="keyword">return</span> (key == <span class="literal">null</span>) ? <span class="number">0</span> : (h = key.hashCode()) ^ (h &gt;&gt;&gt; <span class="number">16</span>);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>&lt;&lt;</code> :左移运算符，向左移若干位，高位丢弃，低位补零。x &lt;&lt; 1,相当于 x 乘以 2(不溢出的情况下)。</li>
+<li><code>&gt;&gt;</code> :<strong>带符号右移</strong>，向右移若干位，高位补符号位，低位丢弃。正数高位补 0,负数高位补 1。x &gt;&gt; 1,相当于 x 除以 2。</li>
+<li><code>&gt;&gt;&gt;</code> :<strong>无符号右移</strong>，忽略符号位，空位都以 0 补齐</li>
+</ul>
+<blockquote>
+<p>移位支持 <strong>int 和 long</strong> 类型，其他的移位计算都是先转型再计算。</p>
+<p>位数超过了实际位数，先取余再移位。</p>
+</blockquote>
+<p>左移的例子：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> -<span class="number">1</span>;</span><br><span class="line">System.out.println(<span class="string">&quot;初始数据：&quot;</span> + i);</span><br><span class="line">System.out.println(<span class="string">&quot;初始数据对应的二进制字符串：&quot;</span> + Integer.toBinaryString(i));</span><br><span class="line">i &lt;&lt;= <span class="number">10</span>;</span><br><span class="line">System.out.println(<span class="string">&quot;左移 10 位后的数据 &quot;</span> + i);</span><br><span class="line">System.out.println(<span class="string">&quot;左移 10 位后的数据对应的二进制字符 &quot;</span> + Integer.toBinaryString(i));</span><br></pre></td></tr></table></figure>
+<ol start="5">
+<li>continue、break、return</li>
+</ol>
+<p>continue：<strong>跳过当次</strong>循环（还在循环体内执行）</p>
+<p>break：<strong>跳出</strong>循环，执行循环体下面的了。</p>
+<p>return：跳出所在方法；有返回值的方法则return一个特定值（对象）。</p>
+<h3 id="数据类型">数据类型</h3>
+<ol>
+<li>基本类型：</li>
+</ol>
+<p>Java 中有 8 种基本数据类型，分别为：</p>
+<ul>
+<li>
+<p>6 种数字类型：</p>
+<ul>
+<li>
+<p>4 种整数型：byte、short、int、long</p>
+</li>
+<li>
+<p>2 种浮点型：float、double</p>
+</li>
+</ul>
+</li>
+<li>
+<p>1 种字符类型：char</p>
+</li>
+<li>
+<p>1 种布尔型：boolean。</p>
+</li>
+</ul>
+<p>这 8 种基本数据类型的默认值以及所占空间的大小如下：</p>
+<table>
+<thead>
+<tr>
+<th>基本类型</th>
+<th>位数</th>
+<th>字节</th>
+<th>默认值</th>
+<th>取值范围</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>byte</td>
+<td>8</td>
+<td>1</td>
+<td>0</td>
+<td>-128 ~ 127</td>
+</tr>
+<tr>
+<td>short</td>
+<td>16</td>
+<td>2</td>
+<td>0</td>
+<td>-32768（-2^15） ~ 32767（2^15 - 1）</td>
+</tr>
+<tr>
+<td>int</td>
+<td>32</td>
+<td>4</td>
+<td>0</td>
+<td>-2147483648 ~ 2147483647</td>
+</tr>
+<tr>
+<td>long</td>
+<td>64</td>
+<td>8</td>
+<td>0L</td>
+<td>-9223372036854775808（-2^63） ~ 9223372036854775807（2^63 -1）</td>
+</tr>
+<tr>
+<td>char</td>
+<td>16</td>
+<td>2</td>
+<td>‘u0000’</td>
+<td>0 ~ 65535（2^16 - 1）</td>
+</tr>
+<tr>
+<td>float</td>
+<td>32</td>
+<td>4</td>
+<td>0f</td>
+<td>1.4E-45 ~ 3.4028235E38</td>
+</tr>
+<tr>
+<td>double</td>
+<td>64</td>
+<td>8</td>
+<td>0d</td>
+<td>4.9E-324 ~ 1.7976931348623157E308</td>
+</tr>
+<tr>
+<td>boolean</td>
+<td>1</td>
+<td></td>
+<td>false</td>
+<td>true、false</td>
+</tr>
+</tbody>
+</table>
+<p>这八种基本类型都有对应的包装类分别为：Byte、Short、Integer、Long、Float、Double、Character、Boolean 。</p>
+<blockquote>
+<p>long 类型数值后面加上L（否则作为整型解析）。</p>
+<p>char 单引号，String 双引号。</p>
+</blockquote>
+<ol start="2">
+<li>基本类型和包装类型:</li>
+</ol>
+<p><img src="/post/37c82b62/%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8BVS%E5%8C%85%E8%A3%85%E7%B1%BB%E5%9E%8B.jpeg" alt="基本类型VS包装类型"></p>
+<blockquote>
+<p><strong>为什么说是几乎所有对象实例都存在于堆中呢？</strong></p>
+<p>这是因为 HotSpot 虚拟机引入了 JIT 优化之后，会对对象进行逃逸分析，如果发现某一个对象并没有逃逸到方法外部，那么就可能通过标量替换来实现栈上分配，而避免堆上分配内存。</p>
+</blockquote>
+<ol start="3">
+<li>包装类型的缓存机制</li>
+</ol>
+<blockquote>
+<p>Java 基本数据类型的包装类型的大部分都用到了缓存机制来提升性能。</p>
+</blockquote>
+<p><code>Byte, Short, Integer, Long</code> 这 4 种包装类默认创建了数值 <strong>[-128，127]</strong> 的相应类型的缓存数据，<code>Character</code> 创建了数值在  <strong>[0,127]</strong> 范围的缓存数据，Boolean 直接返回 True or False。</p>
+<p><code>Integer</code>缓存源码：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> Integer <span class="title function_">valueOf</span><span class="params">(<span class="type">int</span> i)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (i &gt;= IntegerCache.low &amp;&amp; i &lt;= IntegerCache.high)</span><br><span class="line">        <span class="keyword">return</span> IntegerCache.cache[i + (-IntegerCache.low)];</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Integer</span>(i);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">class</span> <span class="title class_">IntegerCache</span> &#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">int</span> <span class="variable">low</span> <span class="operator">=</span> -<span class="number">128</span>;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">int</span> high;</span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line">        <span class="comment">// high value may be configured by property</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">h</span> <span class="operator">=</span> <span class="number">127</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>Character</code>缓存源码：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> Character <span class="title function_">valueOf</span><span class="params">(<span class="type">char</span> c)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (c &lt;= <span class="number">127</span>) &#123; <span class="comment">// must cache</span></span><br><span class="line">      <span class="keyword">return</span> CharacterCache.cache[(<span class="type">int</span>)c];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Character</span>(c);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">class</span> <span class="title class_">CharacterCache</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="title function_">CharacterCache</span><span class="params">()</span>&#123;&#125;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">final</span> Character cache[] = <span class="keyword">new</span> <span class="title class_">Character</span>[<span class="number">127</span> + <span class="number">1</span>];</span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; cache.length; i++)</span><br><span class="line">            cache[i] = <span class="keyword">new</span> <span class="title class_">Character</span>((<span class="type">char</span>)i);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>Boolean</code>缓存源码：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> Boolean <span class="title function_">valueOf</span><span class="params">(<span class="type">boolean</span> b)</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> (b ? TRUE : FALSE);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>两种浮点类型的包装类<code>Float</code>、<code>Double</code>没有实现缓存。</p>
+<p>关于比较问题：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">Integer</span> <span class="variable">i1</span> <span class="operator">=</span> <span class="number">40</span>;</span><br><span class="line"><span class="type">Integer</span> <span class="variable">i2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Integer</span>(<span class="number">40</span>);</span><br><span class="line">System.out.pringln(i1 == i2);   <span class="comment">// 输出false。</span></span><br></pre></td></tr></table></figure>
+<p><code>Integer i1=40</code> 这一行代码会发生装箱，也就是说这行代码等价于 <code>Integer i1=Integer.valueOf(40)</code> 。因此，<code>i1</code> 直接使用的是缓存中的对象。而<code>Integer i2 = new Integer(40)</code> 会直接创建新的对象。</p>
+<p>所以，<strong>所有整型包装类对象之间值的比较，全部使用 equals 方法比较。</strong></p>
+<ol start="4">
+<li>自动装箱与拆箱</li>
+</ol>
+<p>装箱：基本类型用对应的引用类型包装起来。</p>
+<p>拆箱：将包装类型转换为基本数据类型。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">Integer</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">10</span>;  <span class="comment">//装箱</span></span><br><span class="line"><span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> i;   <span class="comment">//拆箱</span></span><br><span class="line">   L1</span><br><span class="line"></span><br><span class="line">    LINENUMBER <span class="number">8</span> L1</span><br><span class="line"></span><br><span class="line">    ALOAD <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    BIPUSH <span class="number">10</span></span><br><span class="line"></span><br><span class="line">    INVOKESTATIC java/lang/Integer.valueOf (I)Ljava/lang/Integer;</span><br><span class="line"></span><br><span class="line">    PUTFIELD AutoBoxTest.i : Ljava/lang/Integer;</span><br><span class="line"></span><br><span class="line">   L2</span><br><span class="line"></span><br><span class="line">    LINENUMBER <span class="number">9</span> L2</span><br><span class="line"></span><br><span class="line">    ALOAD <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    ALOAD <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    GETFIELD AutoBoxTest.i : Ljava/lang/Integer;</span><br><span class="line"></span><br><span class="line">    INVOKEVIRTUAL java/lang/Integer.intValue ()I</span><br><span class="line"></span><br><span class="line">    PUTFIELD AutoBoxTest.n : I</span><br><span class="line"></span><br><span class="line">    RETURN</span><br></pre></td></tr></table></figure>
+<p>从字节码中，我们发现装箱其实就是调用了 包装类的<code>valueOf()</code>方法，拆箱其实就是调用了 <code>xxxValue()</code>方法。</p>
+<p>因此，</p>
+<ul>
+<li><code>Integer i = 10</code> 等价于 <code>Integer i = Integer.valueOf(10)</code></li>
+<li><code>int n = i</code> 等价于 <code>int n = i.intValue()</code></li>
+</ul>
+<p>注意：<strong>如果频繁拆装箱的话，也会严重影响系统的性能。我们应该尽量避免不必要的拆装箱操作</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="type">long</span> <span class="title function_">sum</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">// 应该使用 long 而不是 Long</span></span><br><span class="line">    <span class="type">Long</span> <span class="variable">sum</span> <span class="operator">=</span> <span class="number">0L</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">long</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt;= Integer.MAX_VALUE; i++)</span><br><span class="line">        sum += i;</span><br><span class="line">    <span class="keyword">return</span> sum;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="5">
+<li>浮点数运算和精度丢失、解决精度丢失</li>
+</ol>
+<p>二进制的计算机在表示一个数字时，宽度有限，无限循环小数在表示时只能被截断，导致了精度丢失。<a href="http://kaito-kidd.com/2018/08/08/computer-system-float-point/">计算机系统基础（四）浮点数</a></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">float</span> <span class="variable">a</span> <span class="operator">=</span> <span class="number">2.0f</span> - <span class="number">1.9f</span>;</span><br><span class="line"><span class="type">float</span> <span class="variable">b</span> <span class="operator">=</span> <span class="number">1.8f</span> - <span class="number">1.7f</span>;</span><br><span class="line">System.out.println(a);<span class="comment">// 0.100000024</span></span><br><span class="line">System.out.println(b);<span class="comment">// 0.099999905</span></span><br><span class="line">System.out.println(a == b);<span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+<p>使用<code>BigDecimal</code>实现浮点数运算不会造成精度丢失。<a href="https://javaguide.cn/java/basis/bigdecimal.html">BigDecimal 详解</a></p>
+<ol start="6">
+<li>超过Long整形的大数表示</li>
+</ol>
+<p><code>BigInteger</code> 内部使用 <code>int[]</code> 数组来存储任意大小的整形数据。</p>
+<p>相对于常规整数类型的运算来说，BigInteger 运算的效率会相对较低。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">long</span> <span class="variable">l</span> <span class="operator">=</span> Long.MAX_VALUE;</span><br><span class="line">System.out.println(l + <span class="number">1</span>); <span class="comment">// -9223372036854775808</span></span><br><span class="line">System.out.println(l + <span class="number">1</span> == Long.MIN_VALUE); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<h3 id="变量">变量</h3>
+<ol>
+<li>成员变量与局部变量</li>
+<li>静态变量</li>
+<li>字符型常量和字符串常量</li>
+</ol>
+<h3 id="方法">方法</h3>
+<ol>
+<li>方法类型和方法返回值</li>
+<li>静态方法为什么不能调用非静态成员？</li>
+<li>静态方法&amp;实例方法</li>
+<li>重写&amp;重载</li>
+<li>可变长参数</li>
+</ol>
+<h3 id="面向对象">面向对象</h3>
+<ol>
+<li>面向对象（三大特征） vs 面向过程</li>
+</ol>
+<p>面向对象的三大特征：</p>
+<ul>
+<li>继承</li>
+<li>封装</li>
+<li>多态</li>
+</ul>
+<ol>
+<li>对象实体、对象引用（强 弱 软 虚）</li>
+<li>类的构造方法</li>
+<li>接口 &amp; 抽象类</li>
+<li>深拷贝 &amp; 浅拷贝</li>
+</ol>
+<h3 id="Object">Object</h3>
+<ol>
+<li>Object 类常见方法</li>
+<li>== 和 equals()</li>
+<li>hashCode()</li>
+<li>重写 equals 必须重写 hashCode()</li>
+</ol>
+<h3 id="String">String</h3>
+<ol>
+<li><code>String</code>`StringBuffer<code>\</code>StringBuilder`</li>
+<li>String 不可变</li>
+<li>字符串拼接：“+” vs StringBuilder</li>
+<li><code>String.equals()</code> 和 <code>Object.equals()</code></li>
+<li>字符串常量池</li>
+<li><code>String s1 = new String(&quot;abc&quot;) </code>创建的对象</li>
+<li><code>String.itern</code></li>
+<li>String类型变量和常量做“+”运算</li>
+</ol>
+<h3 id="异常">异常</h3>
+<h3 id="泛型">泛型</h3>
+<h3 id="反射">反射</h3>
+<h3 id="注解">注解</h3>
+<h3 id="SPI">SPI</h3>
+<h3 id="IO">IO</h3>
+<h3 id="序列化、反序列化">序列化、反序列化</h3>
+<h3 id="语法糖">语法糖</h3>
+<h2 id="重点">重点</h2>
+]]></content>
+      <categories>
+        <category>Coding</category>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>离人</title>
+    <url>/post/14e24de8.html</url>
+    <content><![CDATA[<h2 id="1">1</h2>
+<p>不懂事的老小孩，家里人都不关注的笨蛋，忘了给自家孙子上户口的生产队队长，拿自己儿子名字贷款给队里的工程的老不修，“人穷水都穷”连个孙娃子都收拾不干净的老头——以上，就是多年以后还留在我脑海中关于爷爷的全部印象了。</p>
+<p>还记得那个三年级的午后，外婆来学校接我，说带我去看爷爷，我懵懵懂懂地跟着去了，看完了，懵懵懂懂地走了，哦，原来是爷爷帮人插秧的时候晕倒了，没抢救回来，于是，我很自然的接受了这样一个事实——爷爷死了，那个编了一天的竹篾拿去换点钱给小孙子买饮料的老头死了。</p>
+<p>因为家庭的原因，我从很小的时候就一直是跟着外公外婆家一起生活的，对于这个爷爷，了解也就十分有限。倒不如说，关于他的很多事，很多印象，全是从外公外婆和爸妈口中听来，最后自行拼接而成的。每逢过年，都是必须要要去上坟的，在这个时候，听一听爸妈讲讲他过去的事，听一听爸妈给他讲他走之后他儿孙的事，再祈愿老人家在天之灵给现世的人保佑，在香蜡钱纸燃烧的火光中、在噼里啪啦的鞭炮声中，代际间的传承就就以这样的形式完成了。</p>
+<h2 id="2">2</h2>
+<p>年龄和脾气之间肯定是有一定关系的，无他，从我自己的经验来看就是这样，从我身边的人变化来看也是这样。</p>
+<p>小学的时候吧，我的邻居家有个年龄很大的老太太，她家养了一条老母狗，很凶，真的很凶，每天我去上学从他家门口经过都心惊肉跳，走的次数多了，最后还是没躲过被咬了一回，因此，我对老太太印象也非常不好。</p>
+<p>那一年，老太太家的枇杷树结果了，很多很大，我很馋，馋但是不敢。后来，老太太叫我自己上树去摘就是了，小孩子哪能受得了鼓励，坐在树上就开始一顿吃。外公刚干完活回来，见我坐在邻居家的枇杷树上大吃，很生气地叫我下来，我没理他，没想到竟然扔小石子过来，于是，我大哭着回家了。外婆回来，知道了情况，抄起二指宽的篾条就朝外公身上打去，一边打一遍骂，“哪有你这样教育娃娃的，那是拿石头打的吗，不晓得轻重，你看我今天打不打得你好看”。</p>
+<p>暴躁，不知轻重，大概就是那时候外公的脾气了。</p>
+<p>上高中了，我运气好，在同学的推荐下得到了市高中的青睐，分数上线就要，免学杂费。当时也没有月假一说，法定假期中时间长点的才能回家，于是，回家的次数就这样变少了。奇怪的是，我跟外公这个老头的关系倒是莫名其妙好了很多，好像几天不见这个人就褪去了往日的暴躁，转身拥抱了相反的平和。家里的打米机不好用了，一看是筛子坏了，行，你小子去街上买一张回来吧；今天要抽水去灌那片花生地，走吧，咱爷俩一块把水管和水泵扛过去；读了几天书手脚也没变慢嘛，还阔以，今天就把这片谷子打完了；“人民渠嘛，还是我切修的，当时毛老汉……”；“嗯，东西拿齐没得，武汉也没得好远嘛，当年我也是切过那边了，你切了好生学习哈，上大学了也不是给你放松的，嗯，屋头我晓得，你走嘛”……</p>
+<p>平和，宁静，像一坛老酒，这是那时候外公的脾气。</p>
+<h2 id="3">3</h2>
+<p>一晃又是几年，好似我从未认真看过外公这个老头一样，他怎么一下子这么瘦弱了，弯腰驼背的了，眼神没有往日的犀利，嘴角却含着似有若无的笑意，像村里那口老井，记录了一切但是又将其深深埋在水底，几无人可触达。</p>
+<p>前不久爸打电话给我，告诉我外公确诊了胃癌，叫我给家里打个电话好歹问一下，但是我一直不敢往家里打电话，我在害怕，在逃避，害怕自己辜负他们的期待，害怕看见他们的眼神，害怕听见他们的声音，我在逃避自己的责任，但是我又还能再躲多久呢？</p>
+<p>曾经我对皮包骨头这个词的印象只停留在字典里，直到我再见到我的外公，那是怎样的一副光景？曾经力担千斤的肌肉再没有一丝一毫留存在这个老人身上，肋骨勾勒出的胸膛就这样毫无遮掩地展现着，同弯曲的脊梁骨一起狰狞地展示着时间的伟力，展示着“病”这一人世间大苦楚的威力，眉头轻蹙的样子像是在忍受着无时无刻不在的痛楚，我简直不忍再看。面对着这一切，我无话可说，我无能为力，世上难道还有什么东西能再换回这个老人的时光吗？</p>
+<p>树欲静而风不止，子欲养而亲不待。初闻不识曲中意，再听已是曲中人。罢，珍惜眼前人吧。</p>
+<h2 id="end">end</h2>
+<p>“真没想到我们在这样一个地方告别，但是跟人告别的时候，还是要用力一点，因为你多说一句，说不定就是最后一句，多看一眼，弄不好就是最后一眼。”——《后会无期》</p>
+]]></content>
+      <categories>
+        <category>Life</category>
+      </categories>
+      <tags>
+        <tag>随想</tag>
       </tags>
   </entry>
 </search>

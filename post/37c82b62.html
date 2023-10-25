@@ -1,0 +1,554 @@
+<!DOCTYPE html><html lang="zh-cn" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>重修之Java基础 | Songziの小窝</title><meta name="author" content="PhilSongZi"><meta name="copyright" content="PhilSongZi"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="重修之Java基础  参考：JavaGuide  概念性的东西  JVM &amp; JDK &amp; JRE   JVM大致结构模型：   字节码，字节码的好处  JVM 可以理解的代码就叫做字节码（即扩展名为 .class 的文件），它不面向任何特定的处理器，只面向虚拟机。  Java编译与解释并存？  Java 程序要经过先编译，后解释两个步骤，由 Java 编写的程序需要先经过编译步骤，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="重修之Java基础">
+<meta property="og:url" content="https://philsongzi.github.io/post/37c82b62.html">
+<meta property="og:site_name" content="Songziの小窝">
+<meta property="og:description" content="重修之Java基础  参考：JavaGuide  概念性的东西  JVM &amp; JDK &amp; JRE   JVM大致结构模型：   字节码，字节码的好处  JVM 可以理解的代码就叫做字节码（即扩展名为 .class 的文件），它不面向任何特定的处理器，只面向虚拟机。  Java编译与解释并存？  Java 程序要经过先编译，后解释两个步骤，由 Java 编写的程序需要先经过编译步骤，">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://philsongzi.github.io/img/infinity-612908.jpg">
+<meta property="article:published_time" content="2023-10-01T10:08:59.000Z">
+<meta property="article:modified_time" content="2023-10-25T11:30:55.564Z">
+<meta property="article:author" content="PhilSongZi">
+<meta property="article:tag" content="Java">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://philsongzi.github.io/img/infinity-612908.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://philsongzi.github.io/post/37c82b62.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//www.google-analytics.com" crossorigin=""/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?4793033598cc33644b86a6b101888054";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-BSM7QFXC5M"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-BSM7QFXC5M');
+</script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: 'days',
+  dateSuffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"Traditional Chinese Activated Manually","cht_to_chs":"Simplified Chinese Activated Manually","day_to_night":"Dark Mode Activated Manually","night_to_day":"Light Mode Activated Manually","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '重修之Java基础',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-10-25 19:30:55'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/custom.css"  media="defer" onload="this.media='all'"><meta name="generator" content="Hexo 6.3.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">Loading...</div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+  window.addEventListener('load',() => { preloader.endLoading() })
+
+  if (false) {
+    document.addEventListener('pjax:send', () => { preloader.initLoading() })
+    document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+  }
+})()</script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">11</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">12</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">7</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://PhilSongZi.github.io/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/infinity-612908.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="Songziの小窝"><img class="site-icon" src="/img/S.png"/><span class="site-name">Songziの小窝</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> Search</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://PhilSongZi.github.io/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">重修之Java基础</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2023-10-01T10:08:59.000Z" title="Created 2023-10-01 18:08:59">2023-10-01</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2023-10-25T11:30:55.564Z" title="Updated 2023-10-25 19:30:55">2023-10-25</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Coding/">Coding</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Coding/Java/">Java</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">Word count:</span><span class="word-count">2.2k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">Reading time:</span><span>8min</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="重修之Java基础"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="重修之Java基础">重修之Java基础</h2>
+<blockquote>
+<p>参考：<a target="_blank" rel="noopener" href="https://javaguide.cn/java/basis/j">JavaGuide</a></p>
+</blockquote>
+<h3 id="概念性的东西">概念性的东西</h3>
+<ol>
+<li>JVM &amp; JDK &amp; JRE</li>
+</ol>
+<p><img src="/post/37c82b62/JVM&amp;JDK&amp;JRE.png" alt="JVM&amp;JDK&amp;JRE"></p>
+<p>JVM大致结构模型：</p>
+<p><img src="/post/37c82b62/JVMModel.png" alt="JVMModel"></p>
+<ol>
+<li>字节码，字节码的好处</li>
+</ol>
+<p>JVM 可以理解的代码就叫做字节码（即扩展名为 .class 的文件），它不面向任何特定的处理器，<strong>只面向虚拟机</strong>。</p>
+<ol start="2">
+<li>Java编译与解释并存？</li>
+</ol>
+<p>Java 程序要经过先编译，后解释两个步骤，由 Java 编写的程序需要先经过编译步骤，生成字节码（.class 文件），这种字节码必须由 Java 解释器来解释执行。</p>
+<ol start="3">
+<li>JIT和AOT编译</li>
+</ol>
+<p>AOT（Ahead of Time Compilation）：适合云原生、微服务架构支持，缺少Java动态特性如反射、动态代理、动态加载、JNI（Java native Interface）。<br>
+JIT（Just In Time）：</p>
+<p>![AOT vs JIT](AOT vs JIT.png)</p>
+<p>参考：<a target="_blank" rel="noopener" href="https://cn.dubbo.apache.org/zh-cn/blog/2023/06/28/%E8%B5%B0%E5%90%91-native-%E5%8C%96springdubbo-aot-%E6%8A%80%E6%9C%AF%E7%A4%BA%E4%BE%8B%E4%B8%8E%E5%8E%9F%E7%90%86%E8%AE%B2%E8%A7%A3/">走向 Native 化：Spring&amp;Dubbo AOT 技术示例与原理讲解</a>、<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/4haTyXUmh8m-dBQaEzwDJw">基于静态编译构建微服务应用</a></p>
+<ol start="4">
+<li>Oracle JDK vs OpenJDK</li>
+</ol>
+<p>区别：</p>
+<p>补充——Oracle JDK vs OpenJDK带来的开源协议：</p>
+<ul>
+<li>BCL 协议（Oracle Binary Code License Agreement）：可以使用 JDK（支持商用），但是不能进行修改。</li>
+<li>OTN 协议（Oracle Technology Network License Agreement）：11 及之后新发布的 JDK 用的都是这个协议，可以自己私下用，但是商用需要付费。</li>
+</ul>
+<ol start="5">
+<li>Java和C++的区别</li>
+</ol>
+<ul>
+<li>Java 不提供指针来直接访问内存，程序内存更加安全</li>
+<li>Java 的类是单继承的，C++ 支持多重继承；虽然 Java 的类不可以多继承，但是接口可以多继承。</li>
+<li>Java 有自动内存管理垃圾回收机制(GC)，不需要程序员手动释放无用内存。</li>
+<li>C ++同时支持方法重载和操作符重载，但是 Java 只支持方法重载（操作符重载增加了复杂性，这与 Java 最初的设计思想不符）。</li>
+</ul>
+<h3 id="语法">语法</h3>
+<ol>
+<li>注释（单行、多行、文档）</li>
+<li>标识符&amp;关键字</li>
+<li>自增&amp;自减</li>
+</ol>
+<p>符号在前就先加/减，符号在后就后加/减。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="variable">b</span> <span class="operator">=</span> <span class="number">10</span>, c = <span class="number">20</span>;</span><br><span class="line">a = b++; <span class="comment">// a: 10, b: 11</span></span><br><span class="line">a = ++c; <span class="comment">// a: 21, c:21</span></span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>移位运算：</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="type">int</span> <span class="title function_">hash</span><span class="params">(Object key)</span> &#123;</span><br><span class="line">    <span class="type">int</span> h;</span><br><span class="line">    <span class="comment">// key.hashCode()：返回散列值也就是hashcode</span></span><br><span class="line">    <span class="comment">// ^：按位异或</span></span><br><span class="line">    <span class="comment">// &gt;&gt;&gt;:无符号右移，忽略符号位，空位都以0补齐</span></span><br><span class="line">    <span class="keyword">return</span> (key == <span class="literal">null</span>) ? <span class="number">0</span> : (h = key.hashCode()) ^ (h &gt;&gt;&gt; <span class="number">16</span>);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>&lt;&lt;</code> :左移运算符，向左移若干位，高位丢弃，低位补零。x &lt;&lt; 1,相当于 x 乘以 2(不溢出的情况下)。</li>
+<li><code>&gt;&gt;</code> :<strong>带符号右移</strong>，向右移若干位，高位补符号位，低位丢弃。正数高位补 0,负数高位补 1。x &gt;&gt; 1,相当于 x 除以 2。</li>
+<li><code>&gt;&gt;&gt;</code> :<strong>无符号右移</strong>，忽略符号位，空位都以 0 补齐</li>
+</ul>
+<blockquote>
+<p>移位支持 <strong>int 和 long</strong> 类型，其他的移位计算都是先转型再计算。</p>
+<p>位数超过了实际位数，先取余再移位。</p>
+</blockquote>
+<p>左移的例子：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> -<span class="number">1</span>;</span><br><span class="line">System.out.println(<span class="string">&quot;初始数据：&quot;</span> + i);</span><br><span class="line">System.out.println(<span class="string">&quot;初始数据对应的二进制字符串：&quot;</span> + Integer.toBinaryString(i));</span><br><span class="line">i &lt;&lt;= <span class="number">10</span>;</span><br><span class="line">System.out.println(<span class="string">&quot;左移 10 位后的数据 &quot;</span> + i);</span><br><span class="line">System.out.println(<span class="string">&quot;左移 10 位后的数据对应的二进制字符 &quot;</span> + Integer.toBinaryString(i));</span><br></pre></td></tr></table></figure>
+<ol start="5">
+<li>continue、break、return</li>
+</ol>
+<p>continue：<strong>跳过当次</strong>循环（还在循环体内执行）</p>
+<p>break：<strong>跳出</strong>循环，执行循环体下面的了。</p>
+<p>return：跳出所在方法；有返回值的方法则return一个特定值（对象）。</p>
+<h3 id="数据类型">数据类型</h3>
+<ol>
+<li>基本类型：</li>
+</ol>
+<p>Java 中有 8 种基本数据类型，分别为：</p>
+<ul>
+<li>
+<p>6 种数字类型：</p>
+<ul>
+<li>
+<p>4 种整数型：byte、short、int、long</p>
+</li>
+<li>
+<p>2 种浮点型：float、double</p>
+</li>
+</ul>
+</li>
+<li>
+<p>1 种字符类型：char</p>
+</li>
+<li>
+<p>1 种布尔型：boolean。</p>
+</li>
+</ul>
+<p>这 8 种基本数据类型的默认值以及所占空间的大小如下：</p>
+<table>
+<thead>
+<tr>
+<th>基本类型</th>
+<th>位数</th>
+<th>字节</th>
+<th>默认值</th>
+<th>取值范围</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>byte</td>
+<td>8</td>
+<td>1</td>
+<td>0</td>
+<td>-128 ~ 127</td>
+</tr>
+<tr>
+<td>short</td>
+<td>16</td>
+<td>2</td>
+<td>0</td>
+<td>-32768（-2^15） ~ 32767（2^15 - 1）</td>
+</tr>
+<tr>
+<td>int</td>
+<td>32</td>
+<td>4</td>
+<td>0</td>
+<td>-2147483648 ~ 2147483647</td>
+</tr>
+<tr>
+<td>long</td>
+<td>64</td>
+<td>8</td>
+<td>0L</td>
+<td>-9223372036854775808（-2^63） ~ 9223372036854775807（2^63 -1）</td>
+</tr>
+<tr>
+<td>char</td>
+<td>16</td>
+<td>2</td>
+<td>‘u0000’</td>
+<td>0 ~ 65535（2^16 - 1）</td>
+</tr>
+<tr>
+<td>float</td>
+<td>32</td>
+<td>4</td>
+<td>0f</td>
+<td>1.4E-45 ~ 3.4028235E38</td>
+</tr>
+<tr>
+<td>double</td>
+<td>64</td>
+<td>8</td>
+<td>0d</td>
+<td>4.9E-324 ~ 1.7976931348623157E308</td>
+</tr>
+<tr>
+<td>boolean</td>
+<td>1</td>
+<td></td>
+<td>false</td>
+<td>true、false</td>
+</tr>
+</tbody>
+</table>
+<p>这八种基本类型都有对应的包装类分别为：Byte、Short、Integer、Long、Float、Double、Character、Boolean 。</p>
+<blockquote>
+<p>long 类型数值后面加上L（否则作为整型解析）。</p>
+<p>char 单引号，String 双引号。</p>
+</blockquote>
+<ol start="2">
+<li>基本类型和包装类型:</li>
+</ol>
+<p><img src="/post/37c82b62/%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8BVS%E5%8C%85%E8%A3%85%E7%B1%BB%E5%9E%8B.jpeg" alt="基本类型VS包装类型"></p>
+<blockquote>
+<p><strong>为什么说是几乎所有对象实例都存在于堆中呢？</strong></p>
+<p>这是因为 HotSpot 虚拟机引入了 JIT 优化之后，会对对象进行逃逸分析，如果发现某一个对象并没有逃逸到方法外部，那么就可能通过标量替换来实现栈上分配，而避免堆上分配内存。</p>
+</blockquote>
+<ol start="3">
+<li>包装类型的缓存机制</li>
+</ol>
+<blockquote>
+<p>Java 基本数据类型的包装类型的大部分都用到了缓存机制来提升性能。</p>
+</blockquote>
+<p><code>Byte, Short, Integer, Long</code> 这 4 种包装类默认创建了数值 <strong>[-128，127]</strong> 的相应类型的缓存数据，<code>Character</code> 创建了数值在  <strong>[0,127]</strong> 范围的缓存数据，Boolean 直接返回 True or False。</p>
+<p><code>Integer</code>缓存源码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> Integer <span class="title function_">valueOf</span><span class="params">(<span class="type">int</span> i)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (i &gt;= IntegerCache.low &amp;&amp; i &lt;= IntegerCache.high)</span><br><span class="line">        <span class="keyword">return</span> IntegerCache.cache[i + (-IntegerCache.low)];</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Integer</span>(i);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">class</span> <span class="title class_">IntegerCache</span> &#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">int</span> <span class="variable">low</span> <span class="operator">=</span> -<span class="number">128</span>;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">int</span> high;</span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line">        <span class="comment">// high value may be configured by property</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">h</span> <span class="operator">=</span> <span class="number">127</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>Character</code>缓存源码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> Character <span class="title function_">valueOf</span><span class="params">(<span class="type">char</span> c)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (c &lt;= <span class="number">127</span>) &#123; <span class="comment">// must cache</span></span><br><span class="line">      <span class="keyword">return</span> CharacterCache.cache[(<span class="type">int</span>)c];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Character</span>(c);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">class</span> <span class="title class_">CharacterCache</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="title function_">CharacterCache</span><span class="params">()</span>&#123;&#125;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">final</span> Character cache[] = <span class="keyword">new</span> <span class="title class_">Character</span>[<span class="number">127</span> + <span class="number">1</span>];</span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; cache.length; i++)</span><br><span class="line">            cache[i] = <span class="keyword">new</span> <span class="title class_">Character</span>((<span class="type">char</span>)i);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>Boolean</code>缓存源码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> Boolean <span class="title function_">valueOf</span><span class="params">(<span class="type">boolean</span> b)</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> (b ? TRUE : FALSE);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>两种浮点类型的包装类<code>Float</code>、<code>Double</code>没有实现缓存。</p>
+<p>关于比较问题：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Integer</span> <span class="variable">i1</span> <span class="operator">=</span> <span class="number">40</span>;</span><br><span class="line"><span class="type">Integer</span> <span class="variable">i2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Integer</span>(<span class="number">40</span>);</span><br><span class="line">System.out.pringln(i1 == i2);   <span class="comment">// 输出false。</span></span><br></pre></td></tr></table></figure>
+<p><code>Integer i1=40</code> 这一行代码会发生装箱，也就是说这行代码等价于 <code>Integer i1=Integer.valueOf(40)</code> 。因此，<code>i1</code> 直接使用的是缓存中的对象。而<code>Integer i2 = new Integer(40)</code> 会直接创建新的对象。</p>
+<p>所以，<strong>所有整型包装类对象之间值的比较，全部使用 equals 方法比较。</strong></p>
+<ol start="4">
+<li>自动装箱与拆箱</li>
+</ol>
+<p>装箱：基本类型用对应的引用类型包装起来。</p>
+<p>拆箱：将包装类型转换为基本数据类型。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Integer</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">10</span>;  <span class="comment">//装箱</span></span><br><span class="line"><span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> i;   <span class="comment">//拆箱</span></span><br><span class="line">   L1</span><br><span class="line"></span><br><span class="line">    LINENUMBER <span class="number">8</span> L1</span><br><span class="line"></span><br><span class="line">    ALOAD <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    BIPUSH <span class="number">10</span></span><br><span class="line"></span><br><span class="line">    INVOKESTATIC java/lang/Integer.valueOf (I)Ljava/lang/Integer;</span><br><span class="line"></span><br><span class="line">    PUTFIELD AutoBoxTest.i : Ljava/lang/Integer;</span><br><span class="line"></span><br><span class="line">   L2</span><br><span class="line"></span><br><span class="line">    LINENUMBER <span class="number">9</span> L2</span><br><span class="line"></span><br><span class="line">    ALOAD <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    ALOAD <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    GETFIELD AutoBoxTest.i : Ljava/lang/Integer;</span><br><span class="line"></span><br><span class="line">    INVOKEVIRTUAL java/lang/Integer.intValue ()I</span><br><span class="line"></span><br><span class="line">    PUTFIELD AutoBoxTest.n : I</span><br><span class="line"></span><br><span class="line">    RETURN</span><br></pre></td></tr></table></figure>
+<p>从字节码中，我们发现装箱其实就是调用了 包装类的<code>valueOf()</code>方法，拆箱其实就是调用了 <code>xxxValue()</code>方法。</p>
+<p>因此，</p>
+<ul>
+<li><code>Integer i = 10</code> 等价于 <code>Integer i = Integer.valueOf(10)</code></li>
+<li><code>int n = i</code> 等价于 <code>int n = i.intValue()</code></li>
+</ul>
+<p>注意：<strong>如果频繁拆装箱的话，也会严重影响系统的性能。我们应该尽量避免不必要的拆装箱操作</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="type">long</span> <span class="title function_">sum</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">// 应该使用 long 而不是 Long</span></span><br><span class="line">    <span class="type">Long</span> <span class="variable">sum</span> <span class="operator">=</span> <span class="number">0L</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">long</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt;= Integer.MAX_VALUE; i++)</span><br><span class="line">        sum += i;</span><br><span class="line">    <span class="keyword">return</span> sum;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="5">
+<li>浮点数运算和精度丢失、解决精度丢失</li>
+</ol>
+<p>二进制的计算机在表示一个数字时，宽度有限，无限循环小数在表示时只能被截断，导致了精度丢失。<a target="_blank" rel="noopener" href="http://kaito-kidd.com/2018/08/08/computer-system-float-point/">计算机系统基础（四）浮点数</a></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">float</span> <span class="variable">a</span> <span class="operator">=</span> <span class="number">2.0f</span> - <span class="number">1.9f</span>;</span><br><span class="line"><span class="type">float</span> <span class="variable">b</span> <span class="operator">=</span> <span class="number">1.8f</span> - <span class="number">1.7f</span>;</span><br><span class="line">System.out.println(a);<span class="comment">// 0.100000024</span></span><br><span class="line">System.out.println(b);<span class="comment">// 0.099999905</span></span><br><span class="line">System.out.println(a == b);<span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+<p>使用<code>BigDecimal</code>实现浮点数运算不会造成精度丢失。<a target="_blank" rel="noopener" href="https://javaguide.cn/java/basis/bigdecimal.html">BigDecimal 详解</a></p>
+<ol start="6">
+<li>超过Long整形的大数表示</li>
+</ol>
+<p><code>BigInteger</code> 内部使用 <code>int[]</code> 数组来存储任意大小的整形数据。</p>
+<p>相对于常规整数类型的运算来说，BigInteger 运算的效率会相对较低。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">long</span> <span class="variable">l</span> <span class="operator">=</span> Long.MAX_VALUE;</span><br><span class="line">System.out.println(l + <span class="number">1</span>); <span class="comment">// -9223372036854775808</span></span><br><span class="line">System.out.println(l + <span class="number">1</span> == Long.MIN_VALUE); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<h3 id="变量">变量</h3>
+<ol>
+<li>成员变量与局部变量</li>
+<li>静态变量</li>
+<li>字符型常量和字符串常量</li>
+</ol>
+<h3 id="方法">方法</h3>
+<ol>
+<li>方法类型和方法返回值</li>
+<li>静态方法为什么不能调用非静态成员？</li>
+<li>静态方法&amp;实例方法</li>
+<li>重写&amp;重载</li>
+<li>可变长参数</li>
+</ol>
+<h3 id="面向对象">面向对象</h3>
+<ol>
+<li>面向对象（三大特征） vs 面向过程</li>
+</ol>
+<p>面向对象的三大特征：</p>
+<ul>
+<li>继承</li>
+<li>封装</li>
+<li>多态</li>
+</ul>
+<ol>
+<li>对象实体、对象引用（强 弱 软 虚）</li>
+<li>类的构造方法</li>
+<li>接口 &amp; 抽象类</li>
+<li>深拷贝 &amp; 浅拷贝</li>
+</ol>
+<h3 id="Object">Object</h3>
+<ol>
+<li>Object 类常见方法</li>
+<li>== 和 equals()</li>
+<li>hashCode()</li>
+<li>重写 equals 必须重写 hashCode()</li>
+</ol>
+<h3 id="String">String</h3>
+<ol>
+<li><code>String</code>`StringBuffer<code>\</code>StringBuilder`</li>
+<li>String 不可变</li>
+<li>字符串拼接：“+” vs StringBuilder</li>
+<li><code>String.equals()</code> 和 <code>Object.equals()</code></li>
+<li>字符串常量池</li>
+<li><code>String s1 = new String(&quot;abc&quot;) </code>创建的对象</li>
+<li><code>String.itern</code></li>
+<li>String类型变量和常量做“+”运算</li>
+</ol>
+<h3 id="异常">异常</h3>
+<h3 id="泛型">泛型</h3>
+<h3 id="反射">反射</h3>
+<h3 id="注解">注解</h3>
+<h3 id="SPI">SPI</h3>
+<h3 id="IO">IO</h3>
+<h3 id="序列化、反序列化">序列化、反序列化</h3>
+<h3 id="语法糖">语法糖</h3>
+<h2 id="重点">重点</h2>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a target="_blank" rel="noopener" href="https://PhilSongZi.github.io">PhilSongZi</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="https://philsongzi.github.io/post/37c82b62.html">https://philsongzi.github.io/post/37c82b62.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Java/">Java</a></div><div class="post_share"><div class="social-share" data-image="/img/infinity-612908.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/post/2eb6dd78.html" title="VueCoreLanguage"><img class="cover" src="/img/infinity-612908.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">VueCoreLanguage</div></div></a></div><div class="next-post pull-right"><a href="/post/89e159ee.html" title="代码随想录之哈希表"><img class="cover" src="/img/infinity-612908.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">代码随想录之哈希表</div></div></a></div></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comment</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">PhilSongZi</div><div class="author-info__description">白日梦想家</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">11</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">12</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">7</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/PhilSongZi"><i class="fab fa-github"></i><span>摸鱼人</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/PhilSongZi" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:greensun.h@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">just do something you like. <p align="center">微信号：PhilSongZi</p> <p align="center">秋秋号：1823753665</p></div><div class="xpand" style="height:200px;"></div><canvas class="illo" width="800" height="800" style="max-width: 200px; max-height: 200px; touch-action: none; width: 640px; height: 640px;"></canvas></div><script src="https://fastly.jsdelivr.net/gh/xiaopengand/blogCdn@latest/xzxr/twopeople1.js"></script><script src="https://fastly.jsdelivr.net/gh/xiaopengand/blogCdn@latest/xzxr/zdog.dist.js"></script><script id="rendered-js" src="https://fastly.jsdelivr.net/gh/xiaopengand/blogCdn@latest/xzxr/twopeople.js"></script><style>.card-widget.card-announcement {
+margin: 0;
+align-items: center;
+justify-content: center;
+text-align: center;
+}
+canvas {
+display: block;
+margin: 0 auto;
+cursor: move;
+}</style><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%87%8D%E4%BF%AE%E4%B9%8BJava%E5%9F%BA%E7%A1%80"><span class="toc-number">1.</span> <span class="toc-text">重修之Java基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A6%82%E5%BF%B5%E6%80%A7%E7%9A%84%E4%B8%9C%E8%A5%BF"><span class="toc-number">1.1.</span> <span class="toc-text">概念性的东西</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%AD%E6%B3%95"><span class="toc-number">1.2.</span> <span class="toc-text">语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.3.</span> <span class="toc-text">数据类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%98%E9%87%8F"><span class="toc-number">1.4.</span> <span class="toc-text">变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95"><span class="toc-number">1.5.</span> <span class="toc-text">方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.6.</span> <span class="toc-text">面向对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Object"><span class="toc-number">1.7.</span> <span class="toc-text">Object</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#String"><span class="toc-number">1.8.</span> <span class="toc-text">String</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%82%E5%B8%B8"><span class="toc-number">1.9.</span> <span class="toc-text">异常</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%9B%E5%9E%8B"><span class="toc-number">1.10.</span> <span class="toc-text">泛型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8D%E5%B0%84"><span class="toc-number">1.11.</span> <span class="toc-text">反射</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A8%E8%A7%A3"><span class="toc-number">1.12.</span> <span class="toc-text">注解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SPI"><span class="toc-number">1.13.</span> <span class="toc-text">SPI</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IO"><span class="toc-number">1.14.</span> <span class="toc-text">IO</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BA%8F%E5%88%97%E5%8C%96%E3%80%81%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96"><span class="toc-number">1.15.</span> <span class="toc-text">序列化、反序列化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%AD%E6%B3%95%E7%B3%96"><span class="toc-number">1.16.</span> <span class="toc-text">语法糖</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%87%8D%E7%82%B9"><span class="toc-number">2.</span> <span class="toc-text">重点</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/post/2eb6dd78.html" title="VueCoreLanguage"><img src="/img/infinity-612908.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="VueCoreLanguage"/></a><div class="content"><a class="title" href="/post/2eb6dd78.html" title="VueCoreLanguage">VueCoreLanguage</a><time datetime="2023-10-20T07:07:39.000Z" title="Created 2023-10-20 15:07:39">2023-10-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/37c82b62.html" title="重修之Java基础"><img src="/img/infinity-612908.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="重修之Java基础"/></a><div class="content"><a class="title" href="/post/37c82b62.html" title="重修之Java基础">重修之Java基础</a><time datetime="2023-10-01T10:08:59.000Z" title="Created 2023-10-01 18:08:59">2023-10-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/89e159ee.html" title="代码随想录之哈希表"><img src="/img/infinity-612908.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="代码随想录之哈希表"/></a><div class="content"><a class="title" href="/post/89e159ee.html" title="代码随想录之哈希表">代码随想录之哈希表</a><time datetime="2023-09-27T08:09:10.000Z" title="Created 2023-09-27 16:09:10">2023-09-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/f06f8293.html" title="代码随想录之字符串"><img src="/img/infinity-612908.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="代码随想录之字符串"/></a><div class="content"><a class="title" href="/post/f06f8293.html" title="代码随想录之字符串">代码随想录之字符串</a><time datetime="2023-09-24T08:09:24.000Z" title="Created 2023-09-24 16:09:24">2023-09-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/250e7dfe.html" title="点触科技笔试记录"><img src="/img/infinity-612908.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="点触科技笔试记录"/></a><div class="content"><a class="title" href="/post/250e7dfe.html" title="点触科技笔试记录">点触科技笔试记录</a><time datetime="2023-09-22T09:51:57.000Z" title="Created 2023-09-22 17:51:57">2023-09-22</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/img/infinity-612908.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2023 By PhilSongZi</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">欢迎访问<a target="_blank" rel="noopener" href="https://PhilSongZi.github.io/">songziの小窝</a>。这里简单记录着这个人的摸鱼生活。</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="chat-btn" type="button" title="Chat"><i class="fas fa-sms"></i></button><a id="to_comment" href="#post-comment" title="Scroll To Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (true){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"><script>(()=>{
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://twikoo-for-my-git-blog.vercel.app',
+      region: '',
+      onCommentLoaded: function () {
+        btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      }
+    }, null))
+  }
+
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://twikoo-for-my-git-blog.vercel.app',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(function (res) {
+      countELement.textContent = res[0].count
+    }).catch(function (err) {
+      console.error(err);
+    });
+  }
+
+  const runFn = () => {
+    init()
+    
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') {
+      setTimeout(runFn,0)
+      return
+    } 
+    getScript('https://cdn.jsdelivr.net/npm/twikoo/dist/twikoo.all.min.js').then(runFn)
+  }
+
+  if ('Twikoo' === 'Twikoo' || !false) {
+    if (false) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo()
+  } else {
+    window.loadOtherComment = () => {
+      loadTwikoo()
+    }
+  }
+})()</script></div><div class="aplayer no-destroy" data-id="173861946" data-server="netease" data-type="playlist" data-fixed="true" data-mini="true" data-listFolded="false" data-order="random" data-preload="none" data-autoplay="false" muted></div><script async src="//at.alicdn.com/t/c/font_4201872_khkmkyw0bg.js"></script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="false"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Search</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  Loading the Database</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="Search for Posts" type="text"/></div></div><hr/><div class="no-result" id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
